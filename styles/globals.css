@@ -1,3 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 
+/* for Header */
+@layer components {
+  .navbar-active .hamburger div:first-child {
+    @apply rotate-45 translate-y-1.5;
+  }
+  .navbar-active .hamburger div:last-child {
+    @apply -rotate-45 -translate-y-1;
+  }
+  .navbar-active div:first-child div:first-child div:last-child{
+    @apply block lg:flex
+  }
+}
+/* for Header */
+
+/* for Footer */
+
+
+.bg-layers {
+  -webkit-animation: filter-animation 4s infinite;
+  animation: filter-animation 4s infinite;
+}
+
+.bg-scale {
+  -webkit-animation: filter-animation 8s infinite;
+  animation: filter-scale 8s infinite;
+}
+
+@-webkit-keyframes filter-animation {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(45deg);
+  }
+  
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(45deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes filter-scale {
+  0% {
+    transform:scale(1);
+  }
+  50% {
+    transform:scale(1.4);
+  }
+  100% {
+      transform:scale(.8);
+  }
+}
+/* for Footer */
+
+
 html,
 body {
   padding: 0;
