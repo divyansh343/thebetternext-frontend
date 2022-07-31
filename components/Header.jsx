@@ -10,7 +10,7 @@ const Header = () => {
                             <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
 
                                 <Link href="/">
-                                    <a  aria-label="logo" className="flex space-x-2 items-center">
+                                    <a aria-label="logo" className="flex space-x-2 items-center">
                                         <div aria-hidden="true" className="flex space-x-1">
                                             <div className="h-4 w-4 rounded-full bg-gray-900"></div>
                                             <div className="h-6 w-2 bg-sky-500"></div>
@@ -18,7 +18,7 @@ const Header = () => {
                                         <span className="text-base font-bold text-gray-400">SASS</span>
                                     </a>
                                 </Link>
-                                
+
                                 <label htmlFor="hbr" className="peer-checked:hamburger block relative z-20 p-6 -mr-6 cursor-pointer lg:hidden">
                                     <div aria-hidden="true" className="m-auto h-0.5 w-6 rounded bg-sky-900 transition duration-300"></div>
                                     <div aria-hidden="true" className="m-auto mt-2 h-0.5 w-6 rounded bg-sky-900 transition duration-300"></div>
@@ -35,14 +35,18 @@ const Header = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <a href="#" className="block md:px-4 transition hover:text-sky-700">
-                                                <span>Portfolio</span>
-                                            </a>
+                                            <Link href="/sports">
+                                                <a className="block md:px-4 transition hover:text-sky-700">
+                                                    <span>Sports</span>
+                                                </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="#" className="block md:px-4 transition hover:text-sky-700">
-                                                <span>Services</span>
-                                            </a>
+                                            <Link href="/entertainment">
+                                                <a className="block md:px-4 transition hover:text-sky-700">
+                                                    <span>Entertainment</span>
+                                                </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
