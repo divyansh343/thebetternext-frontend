@@ -1,10 +1,11 @@
-import Footer from './Footer'
 import Header from './Header'
-
+import Footer from './Footer'
+import Announcement from '../elements/Announcement'
 const Layout = ({children}) => {
   return (
     <div>
-        <Header />
+        {/* <Announcement /> */}
+        <Header /> 
         <div>
         {children}
         </div>

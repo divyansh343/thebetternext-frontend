@@ -21,17 +21,17 @@ export async function getServerSideProps() {
 
   // for displaying post categorywise.
 
-  // const query = `
-  // *[_type == "post" &&  "lifestyle" in categories[]->title]{
-  //   author->{
-  //     name,
-  //     slug,
-  //     image
-  //   },
-  //   ...,
-  //   }`;
-  // const data = await client.fetch(query)
-  // console.log({"category posts":data});
+  const query = `
+  *[_type == "post" &&  "lifestyle" in categories[]->title]{
+    author->{
+      name,
+      slug,
+      image
+    },
+    ...,
+    }`;
+  const data = await client.fetch(query)
+  console.log({"category posts":data});
 
   // for all authors
 
@@ -46,10 +46,6 @@ export async function getServerSideProps() {
   //   }`
   // const data = await client.fetch(query)
   // console.log({ "category posts": data });
-  
-  const query = `*[_type == "post" && slug.current == 'sanity-works'][0]`
-  const data = await client.fetch(query)
-  console.log({ "cat": data });
 
   return {
     props: {}, // will be passed to the page component as props
