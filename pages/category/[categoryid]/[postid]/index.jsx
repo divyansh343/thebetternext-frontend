@@ -3,9 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import client from '../../../../client'
 
-
-
-const Post = () => {
+const Post = ({data}) => {
   const router = useRouter()
   const { postid } = router.query
   return (
@@ -21,7 +19,6 @@ const Post = () => {
 
 export async function getServerSideProps(context) {
   const { postid } = context.query
-  console.log(postid);
   const query = `*[_type == "post" && slug.current == '${postid}'][0]`
   const data = await client.fetch(query)
   console.log({ "cat": data });
