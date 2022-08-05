@@ -4,6 +4,7 @@ import Link from 'next/link'
 import client from '../../../../client'
 
 const Post = ({data}) => {
+  console.log(data)
   const router = useRouter()
   const { postid } = router.query
   return (

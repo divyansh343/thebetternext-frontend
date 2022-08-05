@@ -2,13 +2,18 @@ import Head from 'next/head'
 import Image from 'next/image'
 import client from '../client'
 import Hero from '../components/homepage/hero'
-import styles from '../styles/Home.module.css'
 import Card from '../components/elements/Card'
 import Carousel from '../components/elements/Carousel'
 import Link from 'next/link'
 
+import imageUrlBuilder from '@sanity/image-url'
+const builder = imageUrlBuilder(client)
+
+function urlFor(source) {
+  return builder.image(source)
+}
+
 export default function Home({ allPosts }) {
-  console.log(allPosts);
   return (
     <>
       <Hero />
@@ -22,7 +27,17 @@ export default function Home({ allPosts }) {
             <>
 
               <div key={post._id} className="each mb-10 m-2 shadow-lg border-gray-800 bg-white relative">
-                <Image width={280} height={300} className="w-full" src="https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="image alt" />
+
+                {post.mainImage &&
+                  <Image
+                    key={post.slug.current}
+                    width={280}
+                    height={300}
+                    className="w-full"
+                    src={builder.image(post.mainImage)
+                      .url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" }
+                    alt={post.title} />
+                }
 
                 <div className="badge absolute top-0 right-0 bg-primary m-1 text-white p-1 px-2 text-xs font-bold rounded">10:53</div>
                 <div className="desc p-4 text-gray-800">
