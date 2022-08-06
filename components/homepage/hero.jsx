@@ -7,7 +7,7 @@ const Hero = () => {
                 <div className="max-w-xl mx-auto text-center">
                     <h1 className="text-3xl font-extrabold sm:text-5xl">
                         Understand User Flow.
-                        <strong className="font-extrabold text-red-700 sm:block">
+                        <strong className="font-extrabold text-primary sm:block">
                             Increase Conversion.
                         </strong>
                     </h1>
@@ -17,7 +17,7 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4 mt-8">
-                        <a className="block w-full px-12 py-3 text-sm font-medium text-white bg-red-600 rounded shadow sm:w-auto active:bg-red-500 hover:bg-red-700 focus:outline-none focus:ring" href="/get-started">
+                        <a className="block w-full px-12 py-3 text-sm font-medium text-white bg-primary rounded shadow sm:w-auto active:bg-red-500 hover:bg-red-700 focus:outline-none focus:ring" href="/get-started">
                             Get Started
                         </a>
 
