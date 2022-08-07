@@ -42,14 +42,14 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/category/sports">
+                      <Link href="/category/health">
                         <a className="block md:px-4 transition hover:text-sky-700">
-                          <span>Sports</span>
+                          <span>Health</span>
                         </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/category/sports/bestpost">
+                      <Link href="/category/sports/james-gunn-confirmed-intercourse-of-peacemaker-and-harcourt-peacemaker-2">
                         <a className="block md:px-4 transition hover:text-sky-700">
                           <span>post</span>
                         </a>
