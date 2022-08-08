@@ -76,9 +76,9 @@ const Post = ({ post }) => {
               <p href="#" className="text-sm pb-3">
                 By <a href="#" className="font-semibold hover:text-gray-800">{post.author.name}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(post.publishedAt).toDateString()}</span>
               </p>
-              <a href="#" className="pb-6">
-              </a>
+              <a href="#" className="text-lg">
                 <PortableText components={ptComponents} value={post.body}/>
+              </a>
               {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
             </div>
           </article>

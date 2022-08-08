@@ -1,10 +1,10 @@
 import Link from 'next/link'
 const Header = () => {
   return (
-    <div className="relative w-full pb-14">
+    <div className="relative w-full pb-12">
       <header>
         <input type="checkbox" name="hbr" id="hbr" className="hbr peer" hidden aria-hidden="true" />
-        <nav className="fixed z-10 w-full border-b bg-white bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md:absolute md:bg-transparent">
+        <nav className="fixed z-10 w-full border-b bg-stone-200 bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-stone-200 md:bg-transparent">
           <div className="container m-auto px-2 md:px-12 lg:px-7">
             <div className="flex flex-wrap items-center justify-between gap-6 md:py-3 md:gap-0">
               <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
@@ -15,7 +15,7 @@ const Header = () => {
                       <div className="h-4 w-4 rounded-full bg-gray-900"></div>
                       <div className="h-6 w-2 bg-sky-500"></div>
                     </div>
-                    <span className="text-base font-bold text-gray-400">SASS</span>
+                    <span className="text-base font-bold text-primary">wion1</span>
                   </a>
                 </Link>
 
@@ -25,7 +25,7 @@ const Header = () => {
                 </label>
               </div>
               <div className="navmenu hidden w-full flex-wrap justify-end items-center mb-16 mx-6 space-y-20 p-6 rounded-xl shadow-lg bg-white lg:space-y-0 lg:p-0 lg:m-0 lg:flex md:flex-nowrap lg:bg-transparent lg:w-7/12 lg:shadow-none">
-                <div className="text-gray-600 lg:pr-4">
+                <div className="text-[#000000] lg:pr-4">
                   <ul className="space-y-6 tracking-wide font-medium text-lg lg:text-sm lg:flex lg:space-y-0">
                     <li>
                       <Link href="/">
@@ -58,10 +58,10 @@ const Header = () => {
                   </ul>
                 </div>
 
-                <div className="w-full space-y-2 border-sky-200 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
+                <div className="w-full space-y-2 border-sky-600 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
                   <button
                     type="button"
-                    className="mx-1 inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-800 transition hover:border-gray-300 hover:bg-purple-50 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                    className="mx-1 inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-stone-100 px-2 py-1 text-sm font-medium text-gray-800 transition hover:border-gray-300 hover:bg-purple-50 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300">
                     Write for us
                   </button>
                   {/* <button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition active:bg-sky-200 focus:bg-sky-100 sm:w-max">

@@ -51,7 +51,7 @@ export async function getServerSideProps() {
   // for displaying post categorywise.
 
   const lifestyle_query = `
-  *[_type == "post" &&  "lifestyle" in categories[]->title]{
+  *[_type == "post" &&  "lifestyle" in categories[]->title][0...4]{
     author->{
       name,
       slug,
@@ -62,7 +62,7 @@ export async function getServerSideProps() {
   const lifestyle_posts = await client.fetch(lifestyle_query)
 
   const health_query = `
-  *[_type == "post" &&  "health" in categories[]->title]{
+  *[_type == "post" &&  "health" in categories[]->title][0...4]{
     author->{
       name,
       slug,

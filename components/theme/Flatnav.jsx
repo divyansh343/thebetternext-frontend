@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 const Flatnav = () => {
   return (
-    <nav className="w-full my-1 py-4 border-t border-b text-base bg-primary text-white">
+    <nav className="z-10 mt-1 w-full mb-8 py-2 border-t border-b text-base bg-white">
       <div className="block sm:hidden">
         <a
           href="#"

@@ -13,7 +13,7 @@ const Cta = () => {
 --> */}
 
             <aside className="bg-gray-50">
-                <div className="px-6 md:p-12 lg:px-16 lg:py-24">
+                <div className="px-6 mb-4 md:p-12 lg:px-16 lg:py-24">
                     <div className="max-w-lg mx-auto">
                         <h2 className="text-base text-primary md:text-3xl">
                         Get your daily dose of uplifting stories, into your inbox.
@@ -28,19 +28,19 @@ const Cta = () => {
 
                     <div className="max-w-xl mx-auto mt-8">
                         <form action="#" className="sm:gap-4 sm:flex">
-                            <div className="sm:flex-1">
+                            <div className="sm:flex-1 mb-2">
                                 <label htmlFor="email" className="sr-only">Email</label>
 
                                 <input
                                     type="email"
                                     placeholder="Email address"
-                                    className="w-full p-3 text-gray-700 transition bg-white border-gray-200 rounded-md shadow-sm focus:ring focus:outline-none focus:ring-primary focus:border-white"
+                                    className="w-full p-2 text-gray-700 transition bg-white border-gray-200 rounded-md shadow-sm focus:ring focus:outline-none focus:ring-primary focus:border-white"
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="flex items-center justify-center w-full px-5 py-3 text-white transition rounded-md bg-primary sm:mt-0 sm:w-auto group focus:outline-none focus:ring focus:ring-primary"
+                                className="flex items-center justify-center w-full px-5 py-2 text-white transition rounded-md bg-primary sm:mt-0 sm:w-auto group focus:outline-none focus:ring focus:ring-primary"
                             >
                                 <span className="text-sm font-medium"> Sign Up </span>
 

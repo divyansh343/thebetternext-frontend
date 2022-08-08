@@ -11,7 +11,7 @@ const Layout = ({children}) => {
         </div>
         <Cta />
         <Footer />
-        <Announcement />
+        <Announcement text="We are working with influencer marketing company" />
     </div>
   )
 }
