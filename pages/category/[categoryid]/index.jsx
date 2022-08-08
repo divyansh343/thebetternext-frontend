@@ -13,9 +13,8 @@ const Page = ({ data }) => {
       <div>
         {/* <div className="mt-40 bannerFondo bg-left-top bg-auto bg-repeat-x" >
         </div> */}
-        <div className="bg-primary mt-2 ">
+        {/* <div className="bg-primary opacity-80 mt-2 ">
           <div className="w-full text-center">
-            {/* <p className="text-sm tracking-widest text-white">Subtitle</p> */}
             <h1 className="pt-4 font-bold text-5xl text-white">
               {categoryid.toUpperCase()}
             </h1>
@@ -74,11 +73,12 @@ const Page = ({ data }) => {
             </div>
 
           </div>
-        </div>
+        </div> */}
 
       </div>
       {/* extra shit */}
       <div className="mx-10 heading font-bold text-4xl m-5 text-primary">
+      {categoryid.toUpperCase()}
        </div>
       <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
         {

@@ -44,14 +44,14 @@ const Header = () => {
                     <li>
                       <Link href="/category/health">
                         <a className="block md:px-4 transition hover:text-sky-700">
-                          <span>Health</span>
+                          <span>India</span>
                         </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/category/sports/james-gunn-confirmed-intercourse-of-peacemaker-and-harcourt-peacemaker-2">
+                      <Link href="/category/culture/">
                         <a className="block md:px-4 transition hover:text-sky-700">
-                          <span>post</span>
+                          <span>Culture</span>
                         </a>
                       </Link>
                     </li>
@@ -59,16 +59,21 @@ const Header = () => {
                 </div>
 
                 <div className="w-full space-y-2 border-sky-200 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
-                  <button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition active:bg-sky-200 focus:bg-sky-100 sm:w-max">
+                  <button
+                    type="button"
+                    className="mx-1 inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-800 transition hover:border-gray-300 hover:bg-purple-50 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                    Write for us
+                  </button>
+                  {/* <button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition active:bg-sky-200 focus:bg-sky-100 sm:w-max">
                     <span className="block text-sky-800 font-semibold lg:text-sm">
-                      Sign up
+                      Join us
                     </span>
                   </button>
                   <button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 active:from-sky-300 focus:from-cyan-400 sm:w-max">
                     <span className="block text-sky-900 font-semibold lg:text-sm">
                       Login
                     </span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

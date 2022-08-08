@@ -3,18 +3,67 @@ import React from 'react'
 const Cta = () => {
     return (
         <>
-            <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-50 p-8 sm:p-12">
-                <div className="w-full max-w-4xl rounded-md border-2 border-gray-100 bg-white p-14">
-                    <div className="flex flex-col items-center">
-                        <span className="-rotate-1 rounded-lg bg-yellow-100 py-px px-2 text-sm text-yellow-800">117+ people joined this week</span>
-                        <h3 className="mt-2 max-w-2xl text-center text-2xl font-bold leading-tight sm:text-3xl md:text-4xl md:leading-tight">Want actionable SEO advice from me? Then join this newsletter</h3>
-                        <form action="" className="mx-auto mt-4 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:gap-0">
-                            <input type="email" name="email" id="email" className="grow rounded border-2 border-primary py-3 px-3 focus:border-emerald-500 focus:outline-none sm:rounded-l-md sm:rounded-r-none sm:border-r-0" placeholder="Email Address" />
-                            <button type="submit" className="rounded bg-primary px-5 py-4 font-bold text-white sm:rounded-l-none sm:rounded-r-md">Get First Email</button>
+            {/* <!--
+            This component uses @tailwindcss/forms
+
+            yarn add @tailwindcss/forms
+            npm install @tailwindcss/forms
+
+            plugins: [require('@tailwindcss/forms')]
+--> */}
+
+            <aside className="bg-gray-50">
+                <div className="px-6 md:p-12 lg:px-16 lg:py-24">
+                    <div className="max-w-lg mx-auto">
+                        <h2 className="text-base text-primary md:text-3xl">
+                        Get your daily dose of uplifting stories, into your inbox.
+                        </h2>
+
+                        {/* <p className="hidden text-gray-500 sm:mt-4 sm:block">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolor
+                            officia blanditiis repellat in, vero, aperiam porro ipsum laboriosam
+                            consequuntur exercitationem incidunt tempora nisi?
+                        </p> */}
+                    </div>
+
+                    <div className="max-w-xl mx-auto mt-8">
+                        <form action="#" className="sm:gap-4 sm:flex">
+                            <div className="sm:flex-1">
+                                <label htmlFor="email" className="sr-only">Email</label>
+
+                                <input
+                                    type="email"
+                                    placeholder="Email address"
+                                    className="w-full p-3 text-gray-700 transition bg-white border-gray-200 rounded-md shadow-sm focus:ring focus:outline-none focus:ring-primary focus:border-white"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="flex items-center justify-center w-full px-5 py-3 text-white transition rounded-md bg-primary sm:mt-0 sm:w-auto group focus:outline-none focus:ring focus:ring-primary"
+                            >
+                                <span className="text-sm font-medium"> Sign Up </span>
+
+                                <svg
+                                    className="w-5 h-5 ml-3"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                </svg>
+                            </button>
                         </form>
                     </div>
                 </div>
-            </div>
+            </aside>
+
         </>
     )
 }
