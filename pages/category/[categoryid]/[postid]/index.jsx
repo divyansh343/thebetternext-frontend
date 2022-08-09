@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import client from '../../../../client'
-import {PortableText} from '@portabletext/react'
+import { PortableText } from '@portabletext/react'
 
 import imageUrlBuilder from '@sanity/image-url'
 import Flatnav from '../../../../components/theme/Flatnav'
@@ -13,31 +13,23 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-
-const ptComponents = {
-  types: {
-    image: ({ value }) => {
-      if (!value?.asset?._ref) {
-        return null
-      }
-      return (
+const Post = ({ post }) => {
+  
+  const ptComponents = {
+    types: {
+      image: ({ value }) => (
         <Image
-          alt={value.alt}
-          loading="lazy"
-          width={320}
-          height={240}
-          src={urlFor(value).fit('max').auto('format')}
+          alt="dffds"
+          height={500}
+          width={900}
+          src={builder.image(value).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"}
         />
       )
+      }
     }
-  }
-}
 
-const Post = ({ post }) => {
   console.log(post)
   const router = useRouter()
-  const { postid } = router.query
-
 
   return (
     <div>
@@ -76,8 +68,8 @@ const Post = ({ post }) => {
               <p href="#" className="text-sm pb-3">
                 By <a href="#" className="font-semibold hover:text-gray-800">{post.author.name}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(post.publishedAt).toDateString()}</span>
               </p>
-              <a href="#" className="text-lg">
-                <PortableText components={ptComponents} value={post.body}/>
+              <a href="#" className="text-base">
+                <PortableText components={ptComponents} value={post.body} />
               </a>
               {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
             </div>
