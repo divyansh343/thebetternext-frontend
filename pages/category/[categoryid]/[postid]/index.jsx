@@ -1,6 +1,4 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import client from '../../../../client'
 import { PortableText } from '@portabletext/react'
@@ -13,25 +11,70 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-const Post = ({ post }) => {
-  
+const Post = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [posts, setPosts] = useState(props.post);
+
+  useEffect(() => {
+    setIsLoading(true);
+    // const tempPosts =  posts;
+    setPosts(posts);
+    setIsLoading(false);
+  }, [posts]);
   const ptComponents = {
+    style : {
+      h6: ({ children }) => <h4 className="text-xl">{children}</h4>,
+      h5: ({ children }) => <h4 className="text-2xl">{children}</h4>,
+      h4: ({ children }) => <h4 className="text-3xl">{children}</h4>,
+      h3: ({ children }) => <h4 className="text-4xl text-blue-400">{children}</h4>,
+      h2: ({ children }) => <h4 className="text-5xl">{children}</h4>,
+      h1: ({ children }) => <h4 className="text-6xl">{children}</h4>,
+    },
     types: {
       image: ({ value }) => (
         <Image
-          alt="dffds"
+          alt={posts.title}
           height={500}
           width={900}
+          loading='lazy'
           src={builder.image(value).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"}
         />
-      )
-      }
-    }
+      ),
+      span: ({ children }) => <span className="text-6xl">{children}</span>,
 
-  console.log(post)
-  const router = useRouter()
+      // callToAction: ({ value, isInline }) =>
+      //   isInline ? (
+      //     <a href={value.url} className="text-primary">{value.text}</a>
+      //   ) : (
+      //     <div className="callToAction">{value.text}</div>
+      //   ),
+    },
+    marks: {
+      
+      // Ex. 1: custom renderer for the em / italics decorator
+      em: ({ children }) => <em className="text-gray-900">{children}</em>,
+      strong: ({ children }) => <strong className="text-bold">{children}</strong>,
+
+      link: ({value, children}) => {
+        const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
+        return (
+          <a href={value?.href} className="text-primary underline" target={target} rel={target === '_blank' && 'noindex nofollow'}>
+            {children}
+          </a>
+        )
+      },
+
+      list: {
+        // Ex. 1: customizing common list types
+        bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
+        // Ex. 2: rendering custom lists
+      },
+    },
+
+  }
 
   return (
+
     <div>
       <Flatnav />
       {/* <header className="">
@@ -51,29 +94,31 @@ const Post = ({ post }) => {
       <div className="container mx-auto flex flex-wrap py-6">
 
         <section className="w-full md:w-2/3 flex flex-col items-center px-3">
+          {isLoading ? <div>loading...</div> :
 
-          <article className="flex flex-col shadow my-4">
-            {
-              post.mainImage &&
-              <Image
-                height={720}
-                width={1200}
-                alt={post.title}
-                src={builder.image(post.mainImage).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"} />
-            }
+            <article className="flex flex-col shadow my-4">
+              {
+                posts.mainImage &&
+                <Image
+                  height={720}
+                  width={1200}
+                  alt={posts.title}
+                  src={builder.image(posts.mainImage).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"} />
+              }
 
-            <div className="bg-white flex flex-col justify-start p-6">
-              <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4">{("Technology").toUpperCase()}</a>
-              <a href="#" className="text-3xl font-bold text-[#303030] opacity-80 pb-4">{post.title}</a>
-              <p href="#" className="text-sm pb-3">
-                By <a href="#" className="font-semibold hover:text-gray-800">{post.author.name}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(post.publishedAt).toDateString()}</span>
-              </p>
-              <a href="#" className="text-base">
-                <PortableText components={ptComponents} value={post.body} />
-              </a>
-              {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
-            </div>
-          </article>
+              <div className="bg-white flex flex-col justify-start p-6">
+                <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4">{("Technology").toUpperCase()}</a>
+                <a href="#" className="text-3xl font-bold text-[#303030] opacity-80 pb-4">{posts.title}</a>
+                <p href="#" className="text-sm pb-3">
+                  By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
+                </p>
+                <a href="#">
+                  <PortableText components={ptComponents} value={posts.body} />
+                </a>
+                {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
+              </div>
+            </article>
+          }
 
 
         </section>
@@ -124,8 +169,6 @@ export async function getServerSideProps(context) {
     publishedAt
   }`
   const data = await client.fetch(query)
-  console.log({ "cat": data });
-
   return {
     props: { post: data }
   }
