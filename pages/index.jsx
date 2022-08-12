@@ -7,6 +7,7 @@ import Carousel from '../components/elements/Carousel'
 import Link from 'next/link'
 
 import imageUrlBuilder from '@sanity/image-url'
+import LongCard from '../components/elements/LongCard'
 const builder = imageUrlBuilder(client)
 
 function urlFor(source) {
@@ -14,6 +15,7 @@ function urlFor(source) {
 }
 
 export default function Home({ allPosts }) {
+  console.log(allPosts);
   return (
     <>
       <Hero />
@@ -38,66 +40,36 @@ export default function Home({ allPosts }) {
 
         <div className="w-full xl:w-4/6 ">
 
-          <div className="flex flex-col space-y-16 mt-3">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
-              <Image
-                height={700}
-                width={1200}
-                src="https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
-                className="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
-              <div className="col-span-1 md:col-span-2">
-                <h2 className="mb-2 text-xl font-bold leading-snug text-gray-800">
-                  <a href="#" className="text-gray-900 hover:text-purple-700">Process Documents Using Artificial Intelligence For RPA Bots</a>
-                </h2>
-                <p className="mb-3 text-sm font-normal text-gray-500">
-                  Earlier RPA bots used to have some limitations like it would take structured data for processing from excel, database, on these data. But with advancements in technology like OCR
-                </p>
-                <p className="mb-2 -mt-1 text-sm font-normal text-gray-500">April 16, 2020</p>
-              </div>
-            </div>
+          {
+            allPosts.map(post => (
+              <>
+                <LongCard  key={post._id} {...post} />
+                {/* <div className="flex flex-col space-y-16 mt-3">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
+                    <Image
+                      height={700}
+                      width={1200}
+                      src="https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
+                      className="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
+                    <div className="col-span-1 md:col-span-3">
+                      <h2 className="mb-2 text-xl font-bold leading-snug text-gray-800">
+                        <a href="#" className="text-gray-900 hover:text-purple-700">Process Documents Using Artificial Intelligence For RPA Bots</a>
+                      </h2>
+                      <p className="mb-3 text-sm font-normal text-gray-500">
+                        Earlier RPA bots used to have some limitations like it would take structured data for processing from excel, database, on these data. But with advancements in technology like OCR
+                      </p>
+                      <p className="mb-2 -mt-1 text-sm font-normal text-gray-500">April 16, 2020</p>
+                    </div>
+                  </div>
 
-          </div>
-          <div className="flex flex-col space-y-16 mt-3">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
-              <Image
-                height={700}
-                width={1200}
-                src="https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
-                className="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
-              <div className="col-span-1 md:col-span-3">
-                <h2 className="mb-2 text-xl font-bold leading-snug text-gray-800">
-                  <a href="#" className="text-gray-900 hover:text-purple-700">Process Documents Using Artificial Intelligence For RPA Bots</a>
-                </h2>
-                <p className="mb-3 text-sm font-normal text-gray-500">
-                  Earlier RPA bots used to have some limitations like it would take structured data for processing from excel, database, on these data. But with advancements in technology like OCR
-                </p>
-                <p className="mb-2 -mt-1 text-sm font-normal text-gray-500">April 16, 2020</p>
-              </div>
-            </div>
+                </div> */}
+              </>
+            ))
+          }
 
-          </div>
-          <div className="flex flex-col space-y-16 mt-3">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
-              <Image
-                height={700}
-                width={1200}
-                src="https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
-                className="object-cover w-full h-40 col-span-1 bg-center" alt="Kutty" loading="lazy" />
-              <div className="col-span-1 md:col-span-2">
-                <h2 className="mb-2 text-xl font-bold leading-snug text-gray-800">
-                  <a href="#" className="text-gray-900 hover:text-purple-700">Process Documents Using Artificial Intelligence For RPA Bots</a>
-                </h2>
-                <p className="mb-3 text-sm font-normal text-gray-500">
-                  Earlier RPA bots used to have some limitations like it would take structured data for processing from excel, database, on these data. But with advancements in technology like OCR
-                </p>
-                <p className="mb-2 -mt-1 text-sm font-normal text-gray-500">April 16, 2020</p>
-              </div>
-            </div>
-
-          </div>
 
           <div className="pt-10 mt-10 border-t border-gray-200">
-            <a href="#" className="w-full btn btn-light btn-lg md:w-auto">Load More</a>
+            {/* <a href="#" className="w-full btn btn-light btn-lg md:w-auto">Load More</a> */}
           </div>
         </div>
 
@@ -105,7 +77,7 @@ export default function Home({ allPosts }) {
       {/* extra cards */}
 
       {/* sits */}
-      <div
+      {/* <div
         className="relative bg-stone-50"
         style={{
           // backgroundImage: 'url("https://images.unsplash.com/photo-1659794958036-259a0bb14f65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60")',
@@ -142,7 +114,6 @@ export default function Home({ allPosts }) {
                         </div>
                       </li>
 
-
                     </ul>
                   </div>
                 </div>
@@ -150,7 +121,7 @@ export default function Home({ allPosts }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* sits */}
       <Carousel />
     </>
@@ -159,8 +130,28 @@ export default function Home({ allPosts }) {
 }
 
 export async function getServerSideProps() {
-  const query = `*[_type == "post"][0...8]`
+  const query = `*[_type == "post"][0...8]{
+    ...,
+    categories[]->
+  }`
+
+
+
   const allPosts = await client.fetch(query)
+
+  const authorquery = `*[_type == '${allPosts.author}']{
+    name,
+    bio,
+    "authorImage": image.asset->url,
+    "posts": *[_type == "post" && author._ref in *[_type=="author" && name == name ]._id ]{
+      title,
+      "slug": slug.current,
+    }
+    }`
+  const authorposts = await client.fetch(authorquery)
+  console.log(authorposts);
+
+
 
   return {
     props: { allPosts }, // will be passed to the page component as props

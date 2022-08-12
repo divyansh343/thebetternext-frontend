@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Head from 'next/head'
 import client from '../../../../client'
 import { PortableText } from '@portabletext/react'
 
@@ -21,8 +22,11 @@ const Post = (props) => {
     setPosts(posts);
     setIsLoading(false);
   }, [posts]);
+
+  console.log(posts)
+
   const ptComponents = {
-    style : {
+    style: {
       h6: ({ children }) => <h4 className="text-xl">{children}</h4>,
       h5: ({ children }) => <h4 className="text-2xl">{children}</h4>,
       h4: ({ children }) => <h4 className="text-3xl">{children}</h4>,
@@ -50,12 +54,12 @@ const Post = (props) => {
       //   ),
     },
     marks: {
-      
+
       // Ex. 1: custom renderer for the em / italics decorator
       em: ({ children }) => <em className="text-gray-900">{children}</em>,
       strong: ({ children }) => <strong className="text-bold">{children}</strong>,
 
-      link: ({value, children}) => {
+      link: ({ value, children }) => {
         const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
         return (
           <a href={value?.href} className="text-primary underline" target={target} rel={target === '_blank' && 'noindex nofollow'}>
@@ -76,6 +80,13 @@ const Post = (props) => {
   return (
 
     <div>
+      <Head>
+        <title>{posts.title}</title>
+        {
+          posts.description &&
+          <meta name="description" content={posts.description} />
+        }
+      </Head>
       <Flatnav />
       {/* <header className="">
         <div className="flex flex-col place-items-start py-12 mx-6">
@@ -107,7 +118,16 @@ const Post = (props) => {
               }
 
               <div className="bg-white flex flex-col justify-start p-6">
-                <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4">{("Technology").toUpperCase()}</a>
+                <div className='flex'>
+                {
+                  posts.categories.map(cat => (
+                    <>
+                      <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4 mx-1">{cat.title}</a>
+                    </>
+                  ))
+                }
+                </div>
+
                 <a href="#" className="text-3xl font-bold text-[#303030] opacity-80 pb-4">{posts.title}</a>
                 <p href="#" className="text-sm pb-3">
                   By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
@@ -126,8 +146,8 @@ const Post = (props) => {
         <aside className="w-full md:w-1/3 flex flex-col items-center px-3">
 
           <div className="w-full bg-white shadow flex flex-col my-4 p-6">
-            <p className="text-xl font-semibold pb-5">About Us</p>
-            <p className="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+            <p className="text-xl font-semibold pb-5">About Post</p>
+            <p className="pb-2">{posts.description}</p>
             <a href="#" className="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
               Get to know us
             </a>
@@ -150,6 +170,53 @@ const Post = (props) => {
               <i className="fab fa-instagram mr-2"></i> Follow @dgrzyb
             </a>
           </div>
+          <div
+            className="relative bg-stone-50"
+            style={{
+              // backgroundImage: 'url("https://images.unsplash.com/photo-1659794958036-259a0bb14f65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60")',
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              backgroundAttachment: "fixed"
+            }}
+          >
+            <div className="bg-gray-900 bg-opacity-70">
+              <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+                <div className="flex flex-row flex-wrap">
+                  <div className="flex-shrink max-w-full w-full py-5 overflow-hidden">
+                    <div className="w-full py-3">
+                      <h2 className="text-white text-2xl text-shadow-black">
+                        <span className="inline-block h-5 border-l-3 border-red-600 mr-2"></span>editor&apos;s choice
+                      </h2>
+                    </div>
+                    <div id="post-carousel" className="splide post-carousel">
+                      <div className="splide__track">
+                        <ul className="splide__list">
+
+
+
+                          <li className="splide__slide">
+                            <div className="w-full pb-3">
+                              <div className="hover-img bg-white">
+                                <a href="">
+                                </a>
+                                <div className="py-3 px-6">
+                                  <h3 className=" leading-tight mb-2 text-lg">
+                                    <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
+                                  </h3>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+
+
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </aside>
 
@@ -162,8 +229,9 @@ export async function getServerSideProps(context) {
   const { postid } = context.query
   const query = `*[_type == "post" && slug.current == '${postid}'][0]{
     title,
+    description,
     body,
-    categories->,
+    categories[]->,
     author->,
     mainImage,
     publishedAt

@@ -15,7 +15,7 @@ const Header = () => {
                       <div className="h-4 w-4 rounded-full bg-gray-900"></div>
                       <div className="h-6 w-2 bg-sky-500"></div>
                     </div>
-                    <span className="text-base font-bold text-primary">wion1</span>
+                    <span className="text-base font-bold text-primary">theglu</span>
                   </a>
                 </Link>
 

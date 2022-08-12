@@ -36,7 +36,7 @@ const index = ({ lifestyle_posts, health_posts }) => {
 
           health_posts.map((post) => (
             <>
-              <Card key={post._id} cat="health" {...post} />
+              <Card key={post._id} cat= "health" {...post} />
             </>
           ))
         }
@@ -71,20 +71,6 @@ export async function getServerSideProps() {
     ...,
     }`;
   const health_posts = await client.fetch(health_query)
-
-  // for all authors
-
-  // const query = `*[_type == "author"]{
-  //   name,
-  //   bio,
-  //   "authorImage": image.asset->url,
-  //   "posts": *[_type == "post" && author._ref in *[_type=="author" && name == name ]._id ]{
-  //     title,
-  //     "slug": slug.current,
-  //   }
-  //   }`
-  // const data = await client.fetch(query)
-  // console.log({ "category posts": data });
 
   return {
     props: {

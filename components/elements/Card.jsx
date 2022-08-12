@@ -27,7 +27,7 @@ const Card = ({mainImage,title,slug,cat,publishedAt}) => {
         <div className="badge absolute top-0 right-0 bg-primary m-1 text-white p-1 px-2 text-xs rounded">{new Date(publishedAt).toDateString()}</div>
   } */}
         <div className="desc px-2 py-2 text-gray-800">
-          <Link href={`/category/${cat || "recommended"}/${slug.current}`}>
+          <Link href={`/category/${cat}/${slug.current}`}>
             <a className=" text-base text-black block cursor-pointer px-1 hover:underline">{title}</a>
           </Link>
         </div>
