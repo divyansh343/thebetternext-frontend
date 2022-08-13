@@ -4,82 +4,54 @@ import Link from 'next/link'
 import client from '../../../client'
 import Card from '../../../components/elements/Card'
 
-const Page = ({ data }) => {
+const Page = ({ data, catdata, catListData }) => {
   const router = useRouter()
   const { categoryid } = router.query
   return (
     <>
       {/* extra shit */}
-      <div>
-        {/* <div className="mt-40 bannerFondo bg-left-top bg-auto bg-repeat-x" >
-        </div> */}
-        {/* <div className="bg-primary opacity-80 mt-2 ">
-          <div className="w-full text-center">
-            <h1 className="pt-4 font-bold text-5xl text-white">
-              {categoryid.toUpperCase()}
-            </h1>
-          </div>
+      <section>
+        <div className="bg-gray-100 sm:grid grid-cols-5 px-4 py-6 min-h-full lg:min-h-screen space-y-6 sm:space-y-0 sm:gap-4">
 
-          <div className="pt-30 grid grid-cols-1 gap-4 sm:grid-cols-3 ">
+          <div className="h-96 col-span-4 bg-gradient-to-tr from-indigo-800 to-indigo-500 rounded-md flex items-center">
+            <div className="ml-20 w-80">
+              <h2 className="text-white text-6xl">{categoryid.toUpperCase()}</h2>
+              <p className="text-indigo-100 mt-4 capitalize font-thin tracking-wider leading-7">{catdata.description}</p>
 
-            <div className="p-2 sm:p-10 text-center cursor-pointer">
-              <div className="py-16 max-w-sm rounded overflow-hidden shadow-lg hover:bg-white transition duration-500  bg-white">
-                <div className="space-y-10">
-                  <i className="fa fa-spa" style={{ fontSize: "48px" }}></i>
-
-                  <div className="px-6 py-4">
-                    <div className="space-y-5">
-                      <div className="font-bold text-xl mb-2">Spa</div>
-                      <p className="text-gray-700 text-base">
-                        Todo tipo de masajes y técnicas
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-2 sm:p-10 text-center cursor-pointer text-white">
-              <div className="py-16 max-w-sm rounded overflow-hidden shadow-lg bg-orange-500 hover:bg-orange-600 transition duration-500">
-                <div className="space-y-10">
-                  <i className="fa fa-head-side-mask" style={{ fontSize: "48px" }}></i>
-                  <div className="px-6 py-4">
-                    <div className="space-y-5">
-                      <div className="font-bold text-xl mb-2">Bioseguridad</div>
-                      <p className="text-base">
-                        Altos estandares de bioseguridad
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-2 sm:p-10 text-center cursor-pointer translate-x-2">
-              <div className="py-16 max-w-sm rounded overflow-hidden shadow-lg hover:bg-white transition duration-500 bg-white ">
-                <div className="space-y-10">
-                  <i className="fa fa-swimmer" style={{ fontSize: "48px" }}></i>
-
-                  <div className="px-6 py-4">
-                    <div className="space-y-5">
-                      <div className="font-bold text-xl mb-2">Piscina</div>
-                      <p className="text-gray-700 text-base">
-                        Piscina temperada
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* <a href="#" className="uppercase inline-block mt-8 text-sm bg-white py-2 px-4 rounded font-semibold hover:bg-indigo-100">get start</a> */}
             </div>
 
           </div>
-        </div> */}
+          <div className="h-96 col-span-1 ">
 
-      </div>
+            <div className="bg-white  rounded-md">
+
+              <h1 className="text-center text-xl my-4  bg-white py-2 rounded-md border-b-2 cursor-pointer  text-gray-600">other categories</h1>
+              <div className="bg-white rounded-md list-none  text-center ">
+                {catListData.map(cate => (<>
+                  <li key={cate._id} className="py-3 border-b-2">
+                    <Link href={`/category/${cate.title}`}>
+                      <a  className="list-none text-base underline text-primary hover:text-gray-700">{cate.title.toLowerCase()}</a>
+                    </Link>
+                  </li>
+
+                </>))}
+                <li  className="py-3 border-b-2">
+                    <Link href={`/category`}>
+                      <a  className="list-none text-base underline text-grey hover:text-lg">Explore...</a>
+                    </Link>
+                  </li>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
       {/* extra shit */}
-      <div className="mx-10 heading font-bold text-4xl m-5 text-primary">
-      {categoryid.toUpperCase()}
-       </div>
+      <div className="mx-10 heading text-4xl m-5 text-primary">
+        {categoryid.charAt(0).toUpperCase() + categoryid.slice(1)} Posts
+      </div>
       <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
         {
 
@@ -106,11 +78,20 @@ export async function getServerSideProps(context) {
     ...,
     }`;
   const data = await client.fetch(query)
-  console.log({ "single category posts": data });
+
+  const catquery = `
+  *[_type == "category" && title == '${categoryid}' ][0]`;
+  const catdata = await client.fetch(catquery)
+
+  const catListquery = `
+  *[_type == "category"]`;
+  const catListData = await client.fetch(catListquery)
 
   return {
     props: {
-      data
+      data,
+      catdata,
+      catListData
     }
   }
 }

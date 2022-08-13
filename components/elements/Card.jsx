@@ -8,7 +8,7 @@ const builder = imageUrlBuilder(client)
 function urlFor(source) {
   return builder.image(source)
 }
-const Card = ({mainImage,title,slug,cat,publishedAt}) => {
+const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   return (
     <>
       <div className="each mb-10 m-2 shadow-lg border-gray-800 bg-white relative py-2">
@@ -23,7 +23,7 @@ const Card = ({mainImage,title,slug,cat,publishedAt}) => {
               .url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"}
             alt={title} />
         }
-  {/* {publishedAt && 
+        {/* {publishedAt && 
         <div className="badge absolute top-0 right-0 bg-primary m-1 text-white p-1 px-2 text-xs rounded">{new Date(publishedAt).toDateString()}</div>
   } */}
         <div className="desc px-2 py-2 text-gray-800">
