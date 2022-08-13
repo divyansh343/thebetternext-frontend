@@ -4,7 +4,7 @@ const Header = () => {
     <div className="relative w-full pb-12">
       <header>
         <input type="checkbox" name="hbr" id="hbr" className="hbr peer" hidden aria-hidden="true" />
-        <nav className="fixed z-10 w-full border-b bg-stone-200 bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-stone-200 md:bg-transparent">
+        <nav className="fixed z-10 w-full border-b bg-stone-200 bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-gradient-to-br from-stone-300 to-green-600 md:bg-transparent">
           <div className="container m-auto px-2 md:px-12 lg:px-7">
             <div className="flex flex-wrap items-center justify-between gap-6 md:py-3 md:gap-0">
               <div className="w-full px-6 flex justify-between lg:w-max md:px-0">

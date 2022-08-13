@@ -1,69 +1,31 @@
 import React from 'react'
-
+import Image from 'next/image'
 const Cta = () => {
     return (
         <>
-            {/* <!--
-            This component uses @tailwindcss/forms
-
-            yarn add @tailwindcss/forms
-            npm install @tailwindcss/forms
-
-            plugins: [require('@tailwindcss/forms')]
---> */}
-
-            <aside className="bg-gray-50">
-                <div className="px-6 mb-4 md:p-12 lg:px-16 lg:py-24">
-                    <div className="max-w-lg mx-auto">
-                        <h2 className="text-base text-primary md:text-3xl">
-                        Get your daily dose of uplifting stories, into your inbox.
-                        </h2>
-
-                        {/* <p className="hidden text-gray-500 sm:mt-4 sm:block">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolor
-                            officia blanditiis repellat in, vero, aperiam porro ipsum laboriosam
-                            consequuntur exercitationem incidunt tempora nisi?
-                        </p> */}
-                    </div>
-
-                    <div className="max-w-xl mx-auto mt-8">
-                        <form action="#" className="sm:gap-4 sm:flex">
-                            <div className="sm:flex-1 mb-2">
-                                <label htmlFor="email" className="sr-only">Email</label>
-
-                                <input
-                                    type="email"
-                                    placeholder="Email address"
-                                    className="w-full p-2 text-gray-700 transition bg-white border-gray-200 rounded-md shadow-sm focus:ring focus:outline-none focus:ring-primary focus:border-white"
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="flex items-center justify-center w-full px-5 py-2 text-white transition rounded-md bg-primary sm:mt-0 sm:w-auto group focus:outline-none focus:ring focus:ring-primary"
-                            >
-                                <span className="text-sm font-medium"> Sign Up </span>
-
-                                <svg
-                                    className="w-5 h-5 ml-3"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                    />
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
+<div className="bg-indigo-600">
+        <div className="lg:grid lg:grid-cols-2">
+            <div className="py-24 px-10 lg:px-0 max-w-3xl lg:max-w-md mx-auto">
+                <h2 className="text-4xl tracking-tight font-extrabold text-gray-100">
+                    <span className="block">Ready to dive in?</span>
+                    <span className="block">Start your free trial today.</span>
+                </h2>
+                <p className="text-gray-300 mt-5">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+                <div className="inline-block shadow mt-5">
+                    <a href="#" className="inline-block py-3 px-4 bg-white hover:bg-indigo-100 text-indigo-500 font-medium border border-transparent rounded-md">Sign up for free</a>
                 </div>
-            </aside>
-
+            </div>
+            <div className="lg:relative lg:mt-16">
+                <Image
+                height={900}
+                width={1200}
+                alt="Illustration"
+                class="lg:absolute lg:inset-0 h-60 w-full lg:h-full object-cover object-center lg:rounded-tl-md" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" />
+            </div>
+        </div>
+    </div>
         </>
     )
 }

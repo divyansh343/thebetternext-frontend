@@ -8,18 +8,24 @@ import Link from 'next/link'
 
 import imageUrlBuilder from '@sanity/image-url'
 import LongCard from '../components/elements/LongCard'
+import SectionCard from '../components/elements/SectionCard'
 const builder = imageUrlBuilder(client)
 
 function urlFor(source) {
   return builder.image(source)
 }
 
-export default function Home({ allPosts,freshPosts }) {
-  console.log(allPosts);
-  console.log(freshPosts);
+export default function Home({ allPosts, freshPosts }) {
+
   return (
     <>
-      <Hero />
+      <Head>
+        <title>theGlu.in</title>
+        <meta name="description" content="description" />
+      </Head>
+      <SectionCard />
+      {/* <Hero /> */}
+      
 
       {/* Card wrapper */}
       <div className="mx-10 heading font-bold text-4xl m-5 text-primary">Editor&apos;s pick</div>
@@ -36,26 +42,26 @@ export default function Home({ allPosts,freshPosts }) {
 
 
       {/* extra cards */}
-      <section className="px-4 py-20 mx-auto max-w-5xl">
+      {/* <section className="px-4 py-20 mx-auto max-w-5xl">
         <h2 className="pb-8 mb-12 text-2xl font-extrabold leading-tight text-gray-900 border-b border-gray-200 md:text-4xl">All Articles</h2>
 
         <div className="w-full xl:w-4/6 ">
 
-          {/* {
+          {
             freshPosts.map(fpost => (
               <>
                 <LongCard  key={fpost._id} {...fpost} />
               </>
             ))
-          } */}
+          }
 
 
           <div className="pt-10 mt-10 border-t border-gray-200">
-            {/* <a href="#" className="w-full btn btn-light btn-lg md:w-auto">Load More</a> */}
+            <a href="#" className="w-full btn btn-light btn-lg md:w-auto">Load More</a>
           </div>
         </div>
 
-      </section>
+      </section> */}
       {/* extra cards */}
 
       {/* sits */}
@@ -120,7 +126,7 @@ export async function getServerSideProps() {
   }`
 
   const allPosts = await client.fetch(query)
-  
+
   // const freshQuery = `*[ _type == "post" && !(post in path("drafts.**"))]`
   // const freshPosts = await client.fetch(freshQuery)
 
@@ -139,7 +145,7 @@ export async function getServerSideProps() {
 
 
   return {
-    props: { allPosts}, // will be passed to the page component as props
+    props: { allPosts }, // will be passed to the page component as props
   }
 }
 
