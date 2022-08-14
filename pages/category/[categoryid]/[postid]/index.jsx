@@ -6,24 +6,25 @@ import { PortableText } from '@portabletext/react'
 
 import imageUrlBuilder from '@sanity/image-url'
 import Flatnav from '../../../../components/theme/Flatnav'
+import Link from 'next/link'
 const builder = imageUrlBuilder(client)
 
 function urlFor(source) {
   return builder.image(source)
 }
 
+function truncate(str, n){
+  return (str.length > n) ? str.slice(0, n-1) + '...' : str;
+};
 const Post = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [posts, setPosts] = useState(props.post);
-
   useEffect(() => {
     setIsLoading(true);
     // const tempPosts =  posts;
     setPosts(posts);
     setIsLoading(false);
   }, [posts]);
-
-  console.log(posts)
 
   const ptComponents = {
     style: {
@@ -87,20 +88,7 @@ const Post = (props) => {
           <meta name="description" content={posts.description} />
         }
       </Head>
-      <Flatnav />
-      {/* <header className="">
-        <div className="flex flex-col place-items-start py-12 mx-6">
-          <p className="text-lg font-semibold mx-4 text-primary">
-            {("innovation").toUpperCase()}
-          </p>
-          <a className="my-2 text-[#303030] mx-4 font-bold text-4xl opacity-80" href="#">
-            {post.title}
-          </a>
-          <p className="my-2 mx-4 text-primary">
-            <span className='text-[#303030]'>By</span>  <span className='hover:underline'>{post.author.name}</span>
-          </p>
-        </div>
-      </header> */}
+      <Flatnav catList={props.catList} />
 
       <div className="container mx-auto flex flex-wrap py-6">
 
@@ -119,18 +107,18 @@ const Post = (props) => {
 
               <div className="bg-white flex flex-col justify-start p-6">
                 <div className='flex'>
-                {
-                  posts.categories.map(cat => (
-                    <>
-                      <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4 mx-1">{cat.title}</a>
-                    </>
-                  ))
-                }
+                  {
+                    posts.categories.map(cat => (
+                      <>
+                        <a href="#" className="text-blue-700 text-sm font-bold uppercase pb-4 mx-1">{cat.title}</a>
+                      </>
+                    ))
+                  }
                 </div>
 
                 <a href="#" className="text-3xl font-bold text-[#303030] opacity-80 pb-4">{posts.title}</a>
                 <p href="#" className="text-sm pb-3">
-                  By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
+                  By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
                 </p>
                 <a href="#">
                   <PortableText components={ptComponents} value={posts.body} />
@@ -145,10 +133,48 @@ const Post = (props) => {
 
         <aside className="w-full md:w-1/3 flex flex-col items-center px-3">
 
+          {/* // for profile */}
+          <div
+            className="card  min-w-sm border border-gray-700 bg-white text-gray-50 my-4 transition-shadow shadow-xl hover:shadow-xl min-w-max">
+
+            <div className="flex items-center p-4">
+              <div className="relative flex flex-col items-center w-full">
+                <div
+                  className="h-24 w-24 md rounded-full relative avatar flex items-end justify-end text-purple-400 min-w-max -top-16 bg-purple-200 row-start-1 row-end-3 text-purple-650 ring-1 ring-white">
+                  <Image
+                    alt={`${posts.author.name} is writer and author in glu.com`}
+                    src={builder.image(posts.author.image).url()}
+                    height={100}
+                    width={100}
+                    className="h-24 w-24 md rounded-full relative"
+                  />
+                  {/* <img class="h-24 w-24 md rounded-full relative" src="https://avatars3.githubusercontent.com/u/11801238?v=4" alt=""> */}
+                  <div className="absolute"></div>
+                </div>
+                <div className="flex flex-col space-y-1 justify-center items-center -mt-12 w-full">
+                  <span className="text-md whitespace-nowrap text-gray-900 ">author-</span><span className="text-md whitespace-nowrap font-bold text-gray-900">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</span>
+                  <p className="text-sm text-gray-900">
+                    I cant start my day without a coffee cup
+                  </p>
+                  <div className="py-2 flex space-x-2">
+                    <button className="flex justify-center  max-h-max whitespace-nowrap focus:outline-none  focus:ring  focus:border-blue-300 rounded max-w-max border bg-transparent border-purple-400 text-purple-400 hover:border-purple-800 px-4 py-1 items-center hover:shadow-lg"><span className="mr-2"></span>FOLLOW<span className="ml-2"></span></button><button className="flex justify-center  max-h-max whitespace-nowrap focus:outline-none  focus:ring  focus:border-blue-300 rounded max-w-max text-gray-100 bg-green-500 hover:bg-green-600 px-4 py-1 items-center hover:shadow-lg"><span className="mr-2"><svg height="20" width="20" viewBox="0 0 32 32" className="fill-current text-red-100"><path d="M22.5,4c-2,0-3.9,0.8-5.3,2.2L16,7.4l-1.1-1.1C12,3.3,7.2,3.3,4.3,6.2c0,0-0.1,0.1-0.1,0.1c-3,3-3,7.8,0,10.8L16,29	l11.8-11.9c3-3,3-7.8,0-10.8C26.4,4.8,24.5,4,22.5,4z"></path></svg></span>SPONSOR <span className="ml-2"></span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <div className='mx-2'>
+              <ul className="border border-gray-200 rounded overflow-hidden mb-1 shadow-md">
+                <li className="px-4 py-2 text-gray-900 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out">First Item</li>
+
+              </ul>
+            </div> */}
+          </div>
+          {/* // for profile */}
+
           <div className="w-full bg-white shadow flex flex-col my-4 p-6">
-            <p className="text-xl font-semibold pb-5">About Post</p>
-            <p className="pb-2">{posts.description}</p>
-            <a href="#" className="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+            <p className="text-xl font-semibold pb-5">About US</p>
+            <p className="pb-2">We are independent magazine that works </p>
+            <a href="#" className="w-full bg-gradient-to-br from-primary to-green-900 text-white text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
               Get to know us
             </a>
           </div>
@@ -166,10 +192,13 @@ const Post = (props) => {
                     <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
                     <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9" /> */}
             </div>
-            <a href="#" className="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
-              <i className="fab fa-instagram mr-2"></i> Follow @dgrzyb
+            <a href="#" className="w-full bg-gradient-to-br from-primary to-green-900 text-white text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+              Follow instagram
             </a>
           </div>
+
+
+
           <div
             className="relative bg-stone-50"
             style={{
@@ -179,7 +208,7 @@ const Post = (props) => {
               backgroundAttachment: "fixed"
             }}
           >
-            <div className="bg-gray-900 bg-opacity-70">
+            <div className="bg-gradient-to-br from-primary to-green-900 bg-opacity-70">
               <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
                 <div className="flex flex-row flex-wrap">
                   <div className="flex-shrink max-w-full w-full py-5 overflow-hidden">
@@ -192,21 +221,28 @@ const Post = (props) => {
                       <div className="splide__track">
                         <ul className="splide__list">
 
-
-
-                          <li className="splide__slide">
-                            <div className="w-full pb-3">
-                              <div className="hover-img bg-white">
-                                <a href="">
+                          {props.allPostsList.map(listItem => (
+                            <>
+                              <Link key={listItem._id} href={`/category/recommended/${listItem.slug.current}`} >
+                                <a >
+                                  <li className="splide__slide">
+                                    <div className="w-full pb-3">
+                                      <div className="hover-img bg-white">
+                                        <div className="py-3 px-6">
+                                          <h3 className=" leading-tight mb-2 text-base">
+                                            <p className='underline hover:text-primary'>{
+                                              truncate(listItem.title,50)
+                                            }</p>
+                                          </h3>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
                                 </a>
-                                <div className="py-3 px-6">
-                                  <h3 className=" leading-tight mb-2 text-lg">
-                                    <a href="#">5 Tips to Save Money Booking Your Next Hotel Room</a>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
+                              </Link>
+                            </>
+                          ))}
+
 
 
                         </ul>
@@ -236,9 +272,27 @@ export async function getServerSideProps(context) {
     mainImage,
     publishedAt
   }`
+
   const data = await client.fetch(query)
+
+
+
+  const catListquery = `
+  *[_type == "category"]`;
+  const catListData = await client.fetch(catListquery)
+
+  const allPostQuery = `*[_type == "post"][0...5]{
+    ...,
+    categories[]->
+  }`
+
+  const allPosts = await client.fetch(allPostQuery)
   return {
-    props: { post: data }
+    props: {
+      post: data,
+      catList: catListData,
+      allPostsList: allPosts
+    }
   }
 }
 

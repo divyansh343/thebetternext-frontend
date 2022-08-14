@@ -14,7 +14,7 @@ const Announcement = ({text}) => {
                                 <p className="text-sm text-white font-medium text-center">
                                     {text} 
 
-                                    <a className="text-white mx-2 hover:underline " href=""> thesocialcharts.com &rarr; </a>
+                                    <a className="text-white mx-2 hover:underline " href=""> Write for us &rarr; </a>
                                 </p>
                             </li>
                         </ul>
