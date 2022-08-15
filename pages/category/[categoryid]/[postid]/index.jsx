@@ -13,8 +13,8 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-function truncate(str, n){
-  return (str.length > n) ? str.slice(0, n-1) + '...' : str;
+function truncate(str, n) {
+  return (str.length > n) ? str.slice(0, n - 1) + '...' : str;
 };
 const Post = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -148,7 +148,7 @@ const Post = (props) => {
                     width={100}
                     className="h-24 w-24 md rounded-full relative"
                   />
-                  {/* <img class="h-24 w-24 md rounded-full relative" src="https://avatars3.githubusercontent.com/u/11801238?v=4" alt=""> */}
+                  {/* <img className="h-24 w-24 md rounded-full relative" src="https://avatars3.githubusercontent.com/u/11801238?v=4" alt=""> */}
                   <div className="absolute"></div>
                 </div>
                 <div className="flex flex-col space-y-1 justify-center items-center -mt-12 w-full">
@@ -182,15 +182,15 @@ const Post = (props) => {
           <div className="w-full bg-white shadow flex flex-col my-4 p-6">
             <p className="text-xl font-semibold pb-5">Instagram</p>
             <div className="grid grid-cols-3 gap-3">
-              {/* <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
-                    <Image class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9" /> */}
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
             </div>
             <a href="#" className="w-full bg-gradient-to-br from-primary to-green-900 text-white text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
               Follow instagram
@@ -231,7 +231,7 @@ const Post = (props) => {
                                         <div className="py-3 px-6">
                                           <h3 className=" leading-tight mb-2 text-base">
                                             <p className='underline hover:text-primary'>{
-                                              truncate(listItem.title,50)
+                                              truncate(listItem.title, 50)
                                             }</p>
                                           </h3>
                                         </div>
