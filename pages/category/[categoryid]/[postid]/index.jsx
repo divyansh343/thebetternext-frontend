@@ -17,14 +17,9 @@ function truncate(str, n) {
   return (str.length > n) ? str.slice(0, n - 1) + '...' : str;
 };
 const Post = (props) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [posts, setPosts] = useState(props.post);
-  useEffect(() => {
-    setIsLoading(true);
-    // const tempPosts =  posts;
-    setPosts(posts);
-    setIsLoading(false);
-  }, [posts]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [posts, setPosts] = useState(props.post);
+  const {posts} = props;
 
   const ptComponents = {
     style: {
@@ -93,7 +88,7 @@ const Post = (props) => {
       <div className="container mx-auto flex flex-wrap py-6">
 
         <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-          {isLoading ? <div>loading...</div> :
+          
 
             <article className="flex flex-col shadow my-4">
               {
@@ -126,8 +121,6 @@ const Post = (props) => {
                 {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
               </div>
             </article>
-          }
-
 
         </section>
 
@@ -289,7 +282,7 @@ export async function getServerSideProps(context) {
   const allPosts = await client.fetch(allPostQuery)
   return {
     props: {
-      post: data,
+      posts: data,
       catList: catListData,
       allPostsList: allPosts
     }
