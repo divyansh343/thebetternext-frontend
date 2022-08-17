@@ -13,7 +13,7 @@ const Layout = ({children}) => {
         <Info />
         <Cta />
         <Footer />
-        <Announcement text="we are looking for content writers write for us." />
+        {/* <Announcement text="we are looking for content writers write for us." /> */}
     </div>
   )
 }
