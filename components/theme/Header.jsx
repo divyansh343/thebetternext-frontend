@@ -1,10 +1,13 @@
 import Link from 'next/link'
+import { useEffect } from 'react';
+import client from '../../client';
 const Header = () => {
+  
   return (
     <div className="relative w-full pb-12">
       <header>
         <input type="checkbox" name="hbr" id="hbr" className="hbr peer" hidden aria-hidden="true" />
-        <nav className="fixed z-10 w-full border-b bg-stone-200 bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-gradient-to-br from-stone-300 to-green-600 md:bg-transparent">
+        <nav className="fixed z-10 w-full border-b bg-stone-200 bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-white md:bg-transparent">
           <div className="container m-auto px-2 md:px-12 lg:px-7">
             <div className="flex flex-wrap items-center justify-between gap-6 md:py-3 md:gap-0">
               <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
@@ -37,24 +40,26 @@ const Header = () => {
                     <li>
                       <Link href="/category">
                         <a className="block md:px-4 transition hover:text-sky-700">
-                          <span>explore</span>
+                          <span>Explore</span>
                         </a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/category/health">
-                        <a className="block md:px-4 transition hover:text-sky-700">
-                          <span>India</span>
-                        </a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/category/culture/">
+                      <Link href="/category/culture">
                         <a className="block md:px-4 transition hover:text-sky-700">
                           <span>Culture</span>
                         </a>
                       </Link>
                     </li>
+                    <li>
+                      <Link href="/category/analytics">
+                        <a className="block md:px-4 transition hover:text-sky-700">
+                          <span>Analytics</span>
+                        </a>
+                      </Link>
+                    </li>
+                    
+
                   </ul>
                 </div>
 
