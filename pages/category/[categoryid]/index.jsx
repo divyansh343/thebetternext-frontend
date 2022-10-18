@@ -13,7 +13,7 @@ const Page = ({ data, catdata, catListData }) => {
       <section>
         <div className="bg-gray-100 sm:grid grid-cols-5 px-4 py-6 min-h-full lg:min-h-screen space-y-6 sm:space-y-0 sm:gap-4">
 
-          <div className="h-96 col-span-4 bg-gradient-to-tr from-indigo-800 to-indigo-500 rounded-md flex items-center">
+          <div className="h-96 col-span-4 bg-gradient-to-tr from-indigo-800 to-headtwo rounded-md flex items-center">
             <div className="ml-20 w-80">
               <h2 className="text-white text-6xl">{categoryid.toUpperCase()}</h2>
               <p className="text-indigo-100 mt-4 capitalize font-thin tracking-wider leading-7">{catdata.description}</p>
@@ -31,7 +31,7 @@ const Page = ({ data, catdata, catListData }) => {
                 {catListData.map(cate => (<>
                   <li key={cate._id} className="py-3 border-b-2">
                     <Link href={`/category/${cate.title}`}>
-                      <a  className="list-none text-base underline text-primary hover:text-gray-700">{cate.title.toLowerCase()}</a>
+                      <a  className="list-none text-base hover:underline text-headtwo hover:text-gray-700">{cate.title.toLowerCase()}</a>
                     </Link>
                   </li>
 
@@ -49,7 +49,7 @@ const Page = ({ data, catdata, catListData }) => {
       </section>
 
       {/* extra shit */}
-      <div className="mx-10 heading text-4xl m-5 text-primary">
+      <div className="mx-10 heading text-4xl m-5 text-headtwo">
         {categoryid.charAt(0).toUpperCase() + categoryid.slice(1)} Posts
       </div>
       <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">

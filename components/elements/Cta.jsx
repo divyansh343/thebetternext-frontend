@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Cta = () => {
     return (
         <>
-<div className="bg-indigo-600">
+<div className="bg-headtwo">
         <div className="lg:grid lg:grid-cols-2">
             <div className="py-24 px-10 lg:px-0 max-w-3xl lg:max-w-md mx-auto">
                 <h2 className="text-4xl tracking-tight font-extrabold text-gray-100">
