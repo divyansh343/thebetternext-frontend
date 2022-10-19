@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { useEffect } from 'react';
 import client from '../../client';
 const Header = () => {
-  
+
   return (
     <div className="relative w-full pb-12">
       <header>
         <input type="checkbox" name="hbr" id="hbr" className="hbr peer" hidden aria-hidden="true" />
-        <nav className="fixed z-10 w-full border-b bg-stone-200 bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-white md:bg-transparent">
+        <nav className="fixed z-10 w-full border-b bg-headcol bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-headcol md:bg-transparent">
           <div className="container m-auto px-2 md:px-12 lg:px-7">
             <div className="flex flex-wrap items-center justify-between gap-6 md:py-3 md:gap-0">
               <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
@@ -18,7 +18,7 @@ const Header = () => {
                       <div className="h-4 w-4 rounded-full bg-gray-900"></div>
                       <div className="h-6 w-2 bg-sky-500"></div>
                     </div>
-                    <span className="text-base font-bold text-primary">theglu</span>
+                    <span className="text-base font-bold text-primary">GLU.</span>
                   </a>
                 </Link>
 
@@ -32,49 +32,47 @@ const Header = () => {
                   <ul className="space-y-6 tracking-wide font-medium text-lg lg:text-sm lg:flex lg:space-y-0">
                     <li>
                       <Link href="/">
-                        <a className="block md:px-4 transition hover:text-sky-700">
+                        <a className="block md:px-4 transition text-lg hover:text-sky-700">
                           <span>Home</span>
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link href="/category">
-                        <a className="block md:px-4 transition hover:text-sky-700">
+                        <a className="block md:px-4 transition text-lg hover:text-sky-700">
                           <span>Explore</span>
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link href="/category/culture">
-                        <a className="block md:px-4 transition hover:text-sky-700">
+                        <a className="block md:px-4 transition text-lg hover:text-sky-700">
                           <span>Culture</span>
                         </a>
                       </Link>
                     </li>
                     <li>
                       <Link href="/category/analytics">
-                        <a className="block md:px-4 transition hover:text-sky-700">
+                        <a className="block md:px-4 transition text-lg hover:text-sky-700">
                           <span>Analytics</span>
                         </a>
                       </Link>
                     </li>
-                    
+
 
                   </ul>
                 </div>
 
                 <div className="w-full space-y-2 border-sky-600 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
-                  <button
-                    type="button"
-                    className="mx-1 inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-gray-200 bg-stone-100 px-2 py-1 text-sm font-medium text-gray-800 transition hover:border-gray-300 hover:bg-purple-50 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300">
-                    Write for us
-                  </button>
-                  {/* <button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition active:bg-sky-200 focus:bg-sky-100 sm:w-max">
-                    <span className="block text-sky-800 font-semibold lg:text-sm">
-                      Join us
-                    </span>
-                  </button>
-                  <button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 active:from-sky-300 focus:from-cyan-400 sm:w-max">
+                  <div>
+                    <Link href="/category/analytics">
+                      <a className="block md:px-4 transition py-1.5 px-5 hover:text-sky-700">
+                        <span>Write for us</span>
+                      </a>
+                    </Link>
+                  </div>
+
+                  {/*<button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 active:from-sky-300 focus:from-cyan-400 sm:w-max">
                     <span className="block text-sky-900 font-semibold lg:text-sm">
                       Login
                     </span>
