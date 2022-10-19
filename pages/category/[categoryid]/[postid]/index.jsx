@@ -20,6 +20,8 @@ const Post = (props) => {
   // const [isLoading, setIsLoading] = useState(false);
   // const [posts, setPosts] = useState(props.post);
   const {posts} = props;
+  console.log(posts);
+  console.log(props.allPostsList);
 
   const ptComponents = {
     style: {
@@ -209,14 +211,14 @@ const Post = (props) => {
                   <div className="flex-shrink max-w-full w-full py-5 overflow-hidden">
                     <div className="w-full py-3">
                       <h2 className="text-white text-2xl text-shadow-black">
-                        <span className="inline-block h-5 border-l-3 border-red-600 mr-2"></span>editor&apos;s choice
+                        <span className="inline-block h-5 border-l-3 border-red-600 mr-2"></span>Editor&apos;s choice
                       </h2>
                     </div>
                     <div id="post-carousel" className="splide post-carousel">
                       <div className="splide__track">
                         <ul className="splide__list">
 
-                          {props.allPostsList.map(listItem => (
+                          {props.allPostsList.filter(item=> item.title != posts.title).map(listItem => (
                             <>
                               <Link key={listItem._id} href={`/category/recommended/${listItem.slug.current}`} >
                                 <a >
@@ -276,7 +278,7 @@ export async function getServerSideProps(context) {
   *[_type == "category"]`;
   const catListData = await client.fetch(catListquery)
 
-  const allPostQuery = `*[_type == "post"][0...5]{
+  const allPostQuery = `*[_type == "post"][0...6]{
     ...,
     categories[]->
   }`
