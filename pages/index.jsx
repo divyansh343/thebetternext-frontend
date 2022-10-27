@@ -20,8 +20,8 @@ export default function Home({ allPosts, freshPosts }) {
   return (
     <>
       <Head>
-        <title>theGlu.in</title>
-        <meta name="description" content="description" />
+        <title>theglu.in</title>
+        <meta name="description" content="theglu.in is an independent magazine we aim to deliver on developmenr jobs and sustainability." />
       </Head>
       <SectionCard />
       {/* <Hero /> */}

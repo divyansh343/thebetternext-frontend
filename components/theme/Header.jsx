@@ -13,12 +13,14 @@ const Header = () => {
               <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
 
                 <Link href="/">
-                  <a aria-label="logo" className="flex space-x-2 items-center">
-                    <div aria-hidden="true" className="flex space-x-1">
-                      <div className="h-4 w-4 rounded-full bg-gray-900"></div>
-                      <div className="h-6 w-2 bg-sky-500"></div>
-                    </div>
-                    <span className="text-base font-bold text-primary">GLU.</span>
+                  <a aria-label="Company" title="Company" className="inline-flex items-center mr-8">
+                    <svg className="w-8 text-deep-purple-accent-400" viewBox="0 0 24 24" strokeLinejoin="round" strokeWidth="2" strokeLinecap="round" strokeMiterlimit="10" stroke="currentColor" fill="none">
+                      <rect x="3" y="1" width="7" height="12"></rect>
+                      <rect x="3" y="17" width="7" height="6"></rect>
+                      <rect x="14" y="1" width="7" height="6"></rect>
+                      <rect x="14" y="11" width="7" height="12"></rect>
+                    </svg>
+                    <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Glu</span>
                   </a>
                 </Link>
 
