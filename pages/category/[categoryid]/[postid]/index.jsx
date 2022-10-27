@@ -176,23 +176,7 @@ const Post = (props) => {
             </a>
           </div>
 
-          <div className="w-full bg-white shadow flex flex-col my-4 p-6">
-            <p className="text-xl font-semibold pb-5">Instagram</p>
-            <div className="grid grid-cols-3 gap-3">
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
-              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
-            </div>
-            <a href="#" className="w-full bg-gradient-to-br from-headtwo to-green-900 text-white text-sm uppercase rounded hover:bg-headcol flex items-center justify-center px-2 py-3 mt-4">
-              Follow instagram
-            </a>
-          </div>
+          
 
 
 
@@ -250,7 +234,23 @@ const Post = (props) => {
               </div>
             </div>
           </div>
-
+<div className="w-full bg-white shadow flex flex-col my-4 p-6">
+            <p className="text-xl font-semibold pb-5">Instagram</p>
+            <div className="grid grid-cols-3 gap-3">
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
+              <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
+            </div>
+            <a href="#" className="w-full bg-gradient-to-br from-headtwo to-green-900 text-white text-sm uppercase rounded hover:bg-headcol flex items-center justify-center px-2 py-3 mt-4">
+              Follow instagram
+            </a>
+          </div>
         </aside>
 
       </div>
