@@ -19,7 +19,7 @@ function truncate(str, n) {
 const Post = (props) => {
   // const [isLoading, setIsLoading] = useState(false);
   // const [posts, setPosts] = useState(props.post);
-  const {posts} = props;
+  const { posts } = props;
   console.log(posts);
   console.log(props.allPostsList);
 
@@ -90,41 +90,42 @@ const Post = (props) => {
       <div className="container mx-auto flex flex-wrap py-6">
 
         <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-          
 
-            <article className="flex flex-col shadow my-4">
-              {
-                posts.mainImage &&
-                <Image
-                  height={720}
-                  width={1200}
-                  alt={posts.title}
-                  src={builder.image(posts.mainImage).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"} />
-              }
 
-              <div className="bg-white flex flex-col justify-start p-6">
-                <div className='flex'>
-                  {
-                    posts.categories.map(cat => (
-                      <>
+          <article className="flex flex-col shadow my-4">
+            {
+              posts.mainImage &&
+              <Image
+                height={720}
+                width={1200}
+                alt={posts.title}
+                src={builder.image(posts.mainImage).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"} />
+            }
+
+            <div className="bg-white flex flex-col justify-start p-6">
+              <div className='flex'>
+                {
+                  posts.categories.map(cat => (
+                    <>
                       <Link href={`/category/${cat.title}`}>
                         <a className="text-headtwo text-sm font-bold uppercase pb-4 mx-1">{cat.title}</a>
                       </Link>
-                      </>
-                    ))
-                  }
-                </div>
-
-                <a href="#" className="text-3xl font-bold text-[#303030] opacity-80 pb-4">{posts.title}</a>
-                <p href="#" className="text-sm pb-3">
-                  By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
-                </p>
-                <a href="#">
-                  <PortableText components={ptComponents} value={posts.body} />
-                </a>
-                {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
+                    </>
+                  ))
+                }
               </div>
-            </article>
+              <h1 className="mb-3 text-3xl font-bold text-[#303030] md:leading-tight md:text-4xl" itemProp="headline" title={posts.title}>
+                {posts.title}
+              </h1>
+              <p href="#" className="text-sm pb-3 mt-2">
+                By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
+              </p>
+              <a className='mt-10 text-lg' href="#">
+                <PortableText components={ptComponents} value={posts.body} />
+              </a>
+              {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
+            </div>
+          </article>
 
         </section>
 
@@ -176,7 +177,7 @@ const Post = (props) => {
             </a>
           </div>
 
-          
+
 
 
 
@@ -202,7 +203,7 @@ const Post = (props) => {
                       <div className="splide__track">
                         <ul className="splide__list">
 
-                          {props.allPostsList.filter(item=> item.title != posts.title).map(listItem => (
+                          {props.allPostsList.filter(item => item.title != posts.title).map(listItem => (
                             <>
                               <Link key={listItem._id} href={`/category/recommended/${listItem.slug.current}`} >
                                 <a >
@@ -234,7 +235,7 @@ const Post = (props) => {
               </div>
             </div>
           </div>
-<div className="w-full bg-white shadow flex flex-col my-4 p-6">
+          <div className="w-full bg-white shadow flex flex-col my-4 p-6">
             <p className="text-xl font-semibold pb-5">Instagram</p>
             <div className="grid grid-cols-3 gap-3">
               <Image className="hover:opacity-75" alt='insta gallery' height={100} width={100} src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />

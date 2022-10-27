@@ -8,6 +8,9 @@ const builder = imageUrlBuilder(client)
 function urlFor(source) {
   return builder.image(source)
 }
+function truncate(str, n) {
+  return (str.length > n) ? str.slice(0, n - 1) + '...' : str;
+};
 const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   return (
     <>
@@ -28,7 +31,9 @@ const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   } */}
         <div className="desc px-2 py-2 text-gray-800">
           <Link href={`/category/${cat}/${slug.current}`}>
-            <a className=" text-base text-black block cursor-pointer px-1 hover:underline">{title}</a>
+            <a className=" text-base text-black block cursor-pointer px-1 hover:underline">{
+              truncate(title, 77)
+            }</a>
           </Link>
         </div>
       </div>

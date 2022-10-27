@@ -3,65 +3,64 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import client from '../../../client'
 import Card from '../../../components/elements/Card'
+import Image from 'next/image'
 
 const Page = ({ data, catdata, catListData }) => {
   const router = useRouter()
   const { categoryid } = router.query
   return (
     <>
-      {/* extra shit */}
-      <section>
-        <div className="bg-gray-100 sm:grid grid-cols-5 px-4 py-6 min-h-full lg:min-h-screen space-y-6 sm:space-y-0 sm:gap-4">
+    <div className='my-3'></div>
+        {/* extra shit */}
+        <article itemID="#" itemScope itemType="http://schema.org/BlogPosting">
+          <div className="bg-blue-500 grid items-center grid-cols-1 md:grid-cols-2">
+            <div className="order-2 h-64 md:order-1 md:h-full">
+              <Image
+                width={500}
+                height={500}
+                src={"https://images.unsplash.com/photo-1446941303752-a64bb1048d54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTEwfHxwZW9wbGUlMjBncm91cHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=600&q=60"}
 
-          <div className="h-96 col-span-4 bg-gradient-to-tr from-indigo-800 to-headtwo rounded-md flex items-center">
-            <div className="ml-20 w-80">
-              <h2 className="text-white text-6xl">{categoryid.toUpperCase()}</h2>
-              <p className="text-indigo-100 mt-4 capitalize font-thin tracking-wider leading-7">{catdata.description}</p>
-
-              {/* <a href="#" className="uppercase inline-block mt-8 text-sm bg-white py-2 px-4 rounded font-semibold hover:bg-indigo-100">get start</a> */}
+                className="object-cover w-full h-full bg-center"
+                alt={categoryid} />
             </div>
-
-          </div>
-          <div className="h-96 col-span-1 ">
-
-            <div className="bg-white  rounded-md">
-
-              <h1 className="text-center text-xl my-4  bg-white py-2 rounded-md border-b-2 cursor-pointer  text-gray-600">other categories</h1>
-              <div className="bg-white rounded-md list-none  text-center ">
-                {catListData.map(cate => (<>
-                  <li key={cate._id} className="py-3 border-b-2">
-                    <Link href={`/category/${cate.title}`}>
-                      <a  className="list-none text-base hover:underline text-headtwo hover:text-gray-700">{cate.title.toLowerCase()}</a>
-                    </Link>
-                  </li>
-
-                </>))}
-                <li  className="py-3 border-b-2">
-                    <Link href={`/category`}>
-                      <a  className="list-none text-base underline text-grey hover:text-lg">Explore...</a>
-                    </Link>
-                  </li>
-              </div>
+            <div className=" border-1 w-full px-4 py-12 mx-auto text-left md:w-3/4 md:py-48 md:order-2 md:px-0">
+              <p className="mb-3 text-gray-500">
+              </p>
+              <h1 className="mb-5 text-3xl font-bold text-gray-900 md:leading-tight md:text-4xl" itemProp="headline" title={categoryid}>
+                {categoryid.toUpperCase()}
+              </h1>
+              <p className=" mt-4 capitalize font-thin tracking-wider leading-7">{catdata.description}</p>
+              <a className="flex items-center text-gray-700" href="#">
+                <div className="avatar">
+                  {/* <img src="/placeholder.jpg" alt="Photo of Praveen Juge" /> */}
+                </div>
+                {/* <div className="ml-2">
+                <p className="text-sm font-semibold text-gray-800">Praveen Juge</p>
+                <p className="text-sm text-gray-500">Swell Guy</p>
+              </div> */}
+              </a>
             </div>
           </div>
+
+
+        </article>
+
+
+        {/* extra shit */}
+
+        <div className="mx-10 heading text-4xl mt-10 m-5 text-headtwo">
+          {categoryid.charAt(0).toUpperCase() + categoryid.slice(1)} Posts
         </div>
+        <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+          {
 
-      </section>
-
-      {/* extra shit */}
-      <div className="mx-10 heading text-4xl m-5 text-headtwo">
-        {categoryid.charAt(0).toUpperCase() + categoryid.slice(1)} Posts
-      </div>
-      <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-        {
-
-          data.map((post) => (
-            <>
-              <Card key={post._id} cat={categoryid} {...post} />
-            </>
-          ))
-        }
-      </div>
+            data.map((post) => (
+              <>
+                <Card key={post._id} cat={categoryid} {...post} />
+              </>
+            ))
+          }
+        </div>
     </>
   )
 }
