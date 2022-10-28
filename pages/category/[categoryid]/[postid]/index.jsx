@@ -87,7 +87,7 @@ const Post = (props) => {
       </Head>
       <Flatnav catList={props.catList} />
 
-      <div className="container mx-auto flex flex-wrap py-6">
+      <div className="container mx-auto flex flex-wrap py-12">
 
         <section className="w-full md:w-2/3 flex flex-col items-center px-3">
 

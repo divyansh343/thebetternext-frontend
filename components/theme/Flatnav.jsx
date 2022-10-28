@@ -4,8 +4,8 @@ const Flatnav = ({ catList }) => {
   return (
     <>
       <nav x-data="{ isOpen: false }" className="relative bg-headtwo shadow dark:bg-gray-800">
-        <div className="container px-6 py-1 mb-4 mx-auto">
-          <div className="py-3 mt-3 -mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
+        <div className="container px-6 py-1 mx-auto">
+          <div className="py-3 mt-3 mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
 
           {
             catList.map(catItem => (

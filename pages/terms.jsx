@@ -3,9 +3,9 @@ import React from 'react'
 const Terms = () => {
     return (
         <>
-            <div className="mx-10 heading font-bold text-4xl m-5 text-primary">Terms & conditions</div>
+            <div className="mx-10 heading font-bold text-4xl mt-8 text-primary">Terms & conditions</div>
             <div>
-                <p className="mx-20 my-20 text-lg">
+                <p className="mx-5 lg:mx-20 my-20  text-lg">
                     All information and content available on the Website and its look and feel, including but not limited to trademarks, logos, service marks, text, graphics, logos, button icons, images, audio clips, material, information, data, news items, links etc. and the compilation and organization thereof contained on this Website (“Content”) is provided for general information only and should not be used as a basis for making any business/commercial decisions.
                     <br />
                     <br />
