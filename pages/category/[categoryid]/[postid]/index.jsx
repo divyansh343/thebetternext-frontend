@@ -120,9 +120,9 @@ const Post = (props) => {
               <p href="#" className="text-sm pb-3 mt-2">
                 By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
               </p>
-              <a className='mt-10 text-lg' href="#">
+              <p className='mt-10 text-lg'>
                 <PortableText components={ptComponents} value={posts.body} />
-              </a>
+              </p>
               {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
             </div>
           </article>
