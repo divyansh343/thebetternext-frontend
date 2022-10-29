@@ -15,7 +15,7 @@ const Page = ({ data, catdata, catListData }) => {
     <div className=''></div>
         {/* extra shit */}
         <article itemID="#" itemScope itemType="http://schema.org/BlogPosting">
-          <div className="bg-headtwo bg-opacity-80 grid items-center grid-cols-1 md:grid-cols-2">
+          <div className="bg-[#F4D8CD] grid items-center grid-cols-1 md:grid-cols-2">
             <div className="order-2 h-64 md:order-1 md:h-full">
               <Image
                 width={900}

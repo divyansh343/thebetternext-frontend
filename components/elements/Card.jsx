@@ -14,7 +14,7 @@ function truncate(str, n) {
 const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   return (
     <>
-      <div className="each mb-10 m-2 shadow-lg border-gray-800 bg-white relative py-2">
+      <div className="each mb-5 m-2 shadow-lg border-gray-800 bg-white relative">
 
         {mainImage &&
           <Image

@@ -8,8 +8,8 @@ module.exports = {
     extend: {
       colors:{
         primary:'#343E3D',
-        headcol:'#BFEDC1',
-        headtwo:'#156064'
+        headcol:'#EFF1F3',
+        headtwo:'#05204A'
         // primary:'stone-200'
       }
     },
