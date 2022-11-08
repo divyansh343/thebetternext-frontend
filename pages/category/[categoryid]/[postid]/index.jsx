@@ -9,6 +9,21 @@ import Flatnav from '../../../../components/theme/Flatnav'
 import Link from 'next/link'
 const builder = imageUrlBuilder(client)
 
+import { useRouter } from 'next/router'
+
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TwitterIcon,
+  TwitterShareButton,
+  RedditShareButton,
+  RedditIcon,
+  EmailShareButton,
+  EmailIcon,
+} from "next-share";
+
 function urlFor(source) {
   return builder.image(source)
 }
@@ -20,8 +35,10 @@ const Post = (props) => {
   // const [isLoading, setIsLoading] = useState(false);
   // const [posts, setPosts] = useState(props.post);
   const { posts } = props;
-  console.log(posts);
-  console.log(props.allPostsList);
+  const router = useRouter()
+  console.log(router.asPath)
+  // console.log(posts);
+  // console.log(props.allPostsList);
 
   const ptComponents = {
     style: {
@@ -133,7 +150,7 @@ const Post = (props) => {
 
           {/* // for profile */}
           <div
-            className="card  min-w-sm border border-gray-700 bg-white text-gray-50 my-4 transition-shadow shadow-xl hover:shadow-xl min-w-max">
+            className="card  min-w-sm border border-gray-700 bg-white text-gray-50 my-4 transition-shadow shadow-xl hover:shadow-xl min-w-max sm:mt-5">
 
             <div className="flex items-center p-4">
               <div className="relative flex flex-col items-center w-full">
@@ -177,9 +194,56 @@ const Post = (props) => {
             </a>
           </div>
 
+          <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+            <p className="text-xl font-semibold pb-5">Share</p>
+            <div className='grid grid-cols-5'>
+              <div className='col-span-1'>
+                <FacebookShareButton
+                  url={`theglu.in${router.asPath}`}
+                  quote={posts.title}
+                  hashtag={"#theglu"}
+                >
+                  <FacebookIcon size={40} round />
 
+                </FacebookShareButton>
+              </div>
+              <div className='flex col-span-1'>
+                <WhatsappShareButton
+                  url={`theglu.in${router.asPath}`}
+                  title={posts.title}
+                  separator=":: "
+                >
+                  <WhatsappIcon size={40} round />
+                </WhatsappShareButton>
+              </div>
+              <div className='flex col-span-1'>
+                <TwitterShareButton
+                  url={`theglu.in${router.asPath}`}
+                  title={posts.title}
+                >
+                  <TwitterIcon size={40} round />
+                </TwitterShareButton>
+              </div>
+              <div className='flex col-span-1'>
+                <RedditShareButton
+                  url={`theglu.in${router.asPath}`}
+                  title={posts.title}
+                >
+                  <RedditIcon size={40} round />
+                </RedditShareButton>
+              </div>
+              <div className='flex col-span-1'>
+                <EmailShareButton
+                  url={`theglu.in${router.asPath}`}
+                  subject={posts.title}
+                  body={posts.description}
+                >
+                  <EmailIcon size={40} round />
+                </EmailShareButton>
+              </div>
+            </div>
 
-
+          </div>
 
           <div
             className="relative bg-stone-50"

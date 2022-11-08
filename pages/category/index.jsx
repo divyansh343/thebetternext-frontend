@@ -11,7 +11,7 @@ function urlFor(source) {
   return builder.image(source)
 }
 const index = ({ lifestyle_posts, health_posts }) => {
-  console.log(lifestyle_posts);
+  // console.log(lifestyle_posts);
   return (
     <div>
 
