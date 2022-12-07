@@ -4,7 +4,7 @@ import client from '../../client';
 const Header = () => {
 
   return (
-    <div className="relative w-full pb-12">
+    <div className="relative w-full pb-12 ">
       <header>
         <input type="checkbox" name="hbr" id="hbr" className="hbr peer" hidden aria-hidden="true" />
         <nav className="fixed z-10 w-full border-b bg-headcol bg-opacity-100 backdrop-blur navbar peer-checked:navbar-active md: lg: lg:bg-headcol md:bg-transparent">

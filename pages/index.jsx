@@ -28,7 +28,7 @@ export default function Home({ allPosts, freshPosts }) {
       
 
       {/* Card wrapper */}
-      <div className="mx-10 heading font-bold text-4xl m-5 text-primary">Editor&apos;s pick</div>
+      <div className="mx-10 heading font-bold text-4xl m-5 text-primary">Latest Post&apos;s</div>
       <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
         {
           allPosts.map((post) => (
@@ -120,7 +120,7 @@ export default function Home({ allPosts, freshPosts }) {
 export async function getServerSideProps() {
 
 
-  const query = `*[_type == "post"][0...8]{
+  const query = `*[_type == "post"][0...12]{
     ...,
     categories[]->
   }`

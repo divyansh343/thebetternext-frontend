@@ -267,7 +267,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="flex items-center justify-center sm:justify-start gap-1.5 group"
-                    // href="/"
+                      href="mailto:divyanshpal300@outlook.com"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -285,11 +285,11 @@ const Footer = () => {
                       </svg>
 
                       <span className="text-black transition group-hover:text-black/75">
-                        john@doe.com
+                        divyanshpal300@outlook.com
                       </span>
                     </a>
                   </li>
-
+{/* 
                   <li>
                     <a
                       className="flex items-center justify-center sm:justify-start gap-1.5 group"
@@ -314,7 +314,7 @@ const Footer = () => {
                         0123456789
                       </span>
                     </a>
-                  </li>
+                  </li> */}
 
                   <li
                     className="flex items-start justify-center gap-1.5 sm:justify-start"
@@ -340,7 +340,7 @@ const Footer = () => {
                     </svg>
 
                     <address className="-mt-0.5 not-italic text-black">
-                      213 Lane, London, United Kingdom
+                      Indore, Madhya Pradesh, India
                     </address>
                   </li>
                 </ul>
@@ -361,13 +361,13 @@ const Footer = () => {
                   </Link>
 
                 <span>&middot;</span>
-
+{/* 
                 <a
                   className="inline-block text-black underline transition hover:text-black/75"
                 // href="/"
                 >
                   Privacy Policy
-                </a>
+                </a> */}
               </p>
 
               <p className="mt-4 text-sm text-black sm:order-first sm:mt-0">

@@ -4,20 +4,22 @@ import Link from 'next/link'
 import client from '../../../client'
 import Card from '../../../components/elements/Card'
 import Image from 'next/image'
+import Flatnav from '../../../components/theme/Flatnav'
 
 const Page = ({ data, catdata, catListData }) => {
   const router = useRouter()
   const { categoryid } = router.query
   return (
     <>
-    <div className='my-3'></div>
+    <Flatnav catList={catListData} />
+    <div className=''></div>
         {/* extra shit */}
         <article itemID="#" itemScope itemType="http://schema.org/BlogPosting">
-          <div className="bg-blue-500 grid items-center grid-cols-1 md:grid-cols-2">
+          <div className="bg-[#F4D8CD] grid items-center grid-cols-1 md:grid-cols-2">
             <div className="order-2 h-64 md:order-1 md:h-full">
               <Image
-                width={500}
-                height={500}
+                width={900}
+                height={900}
                 src={"https://images.unsplash.com/photo-1446941303752-a64bb1048d54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTEwfHxwZW9wbGUlMjBncm91cHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=600&q=60"}
 
                 className="object-cover w-full h-full bg-center"
@@ -48,10 +50,10 @@ const Page = ({ data, catdata, catListData }) => {
 
         {/* extra shit */}
 
-        <div className="mx-10 heading text-4xl mt-10 m-5 text-headtwo">
+        <div className="mx-10 heading text-4xl mt-10  text-headtwo">
           {categoryid.charAt(0).toUpperCase() + categoryid.slice(1)} Posts
         </div>
-        <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+        <div className="holder mx-auto mt-20 w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
           {
 
             data.map((post) => (
