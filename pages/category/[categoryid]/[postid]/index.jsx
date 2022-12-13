@@ -39,6 +39,13 @@ const Post = (props) => {
   console.log(router.asPath)
   // console.log(posts);
   // console.log(props.allPostsList);
+  useEffect(() => {
+    (function (d) {
+      var appziScript = d.createElement('script');
+      appziScript.src = `https://w.appzi.io/w.js?token=sXoA8`;
+      d.head.appendChild(appziScript);
+    })(document);
+  }, [])
 
   const ptComponents = {
     style: {
