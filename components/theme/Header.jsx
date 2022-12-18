@@ -66,13 +66,13 @@ const Header = () => {
                 </div>
 
                 <div className="w-full space-y-2 border-sky-600 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
-                  <div>
+                  {/* <div className='border-[1px] bg-red-400 rounded-[8px]'>
                     <Link href="/category/analytics">
                       <a className="block md:px-4 transition py-1.5 px-5 hover:text-sky-700">
                         <span>Write for us</span>
                       </a>
                     </Link>
-                  </div>
+                  </div> */}
 
                   {/*<button type="button" title="Start buying" className="w-full py-2.5 px-5 text-center rounded-full transition bg-gradient-to-b from-sky-400 to-cyan-300 active:from-sky-300 focus:from-cyan-400 sm:w-max">
                     <span className="block text-sky-900 font-semibold lg:text-sm">

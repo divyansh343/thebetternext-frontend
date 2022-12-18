@@ -14,14 +14,14 @@ function truncate(str, n) {
 const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   return (
     <>
-      <div className="each mb-5 m-2 shadow-lg rounded-b-lg border-gray-800 bg-white relative">
+      <div className="each mb-5 m-2 shadow-lg rounded-b-md border-gray-800 bg-white relative">
 
         {mainImage &&
           <Image
             key={slug.current}
             width={1200}
             height={720}
-            className="w-full rounded-t-lg"
+            className="w-full rounded-t-md"
             src={builder.image(mainImage)
               .url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"}
             alt={title} />
@@ -31,7 +31,7 @@ const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   } */}
         <div className="desc px-2 py-2 text-gray-800 ">
           <Link href={`/category/${cat}/${slug.current}`}>
-            <a className=" text-base font-[poppins]  text-black block cursor-pointer px-1 hover:underline">{
+            <a className=" text-base text-black block cursor-pointer px-1 hover:underline">{
               truncate(title, 77)
             }</a>
           </Link>

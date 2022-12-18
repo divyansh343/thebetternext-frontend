@@ -2,21 +2,28 @@ import Layout from '../components/theme/Layout'
 import '../styles/globals.css'
 import Head from 'next/head'
 import { useEffect } from 'react';
+import Script from 'next/script'
 function MyApp({ Component, pageProps }) {
-  // useEffect(() => {
-  //   window.$crisp = [];
-  //   window.CRISP_WEBSITE_ID = "Y6cfe4fb0-37c4-4e3d-bb25-34dec5b92a9a";
-  //   (() => {
-  //     const d = document;
-  //     const s = d.createElement("script");
-  //     s.src = "https://client.crisp.chat/l.js";
-  //     s.async = 1;
-  //     d.getElementsByTagName("body")[0].appendChild(s);
-  //   })();
-  // });
+
+//g anal
+// <!-- Google tag (gtag.js) -->
+
+
+useEffect(() => {
  
+}, [])
+
+ // clarity
+  useEffect(() => {
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ey9pj5euqg");
+  }, [])
 
   // chatwoot
+  
   useEffect(() => {
     (function(d,t) {
       var BASE_URL="https://app.chatwoot.com";
@@ -37,9 +44,27 @@ function MyApp({ Component, pageProps }) {
   
   return (
     <>
+       <Script
+    strategy="lazyOnload"
+    src={`https://www.googletagmanager.com/gtag/js?id=G-ELC9BDXRZH`}
+  />
+
+<Script id="google-analytics" strategy="lazyOnload">
+    {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ELC9BDXRZH', {
+              page_path: window.location.pathname,
+            });
+                `}
+  </Script>
     <Head>
         <title>theglu.in</title>
         <meta name="description" content="theglu.in is an independent magazine we aim to deliver on developmenr jobs and sustainability." />
+
+     
+
       </Head>
     <Layout>
       <Component {...pageProps} />
