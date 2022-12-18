@@ -37,7 +37,7 @@ const Post = (props) => {
   const { posts } = props;
   const router = useRouter()
   // console.log(router.asPath)
-  console.log(posts);
+  // console.log(posts);
   // console.log(props.allPostsList);
   useEffect(() => {
     (function (d) {
@@ -184,7 +184,13 @@ const Post = (props) => {
 
                   <div className="py-2 flex space-x-2">
 
-                    <button className="flex justify-center max-h-max whitespace-nowrap focus:outline-none  focus:ring  focus:border-blue-300 rounded max-w-max text-gray-100 bg-headtwo  px-4 py-1 items-center hover:shadow-lg hover:text-black hover:bg-green-500"><span className="mr-2"><svg height="20" width="20" viewBox="0 0 32 32" className="fill-current text-red-700"><path d="M22.5,4c-2,0-3.9,0.8-5.3,2.2L16,7.4l-1.1-1.1C12,3.3,7.2,3.3,4.3,6.2c0,0-0.1,0.1-0.1,0.1c-3,3-3,7.8,0,10.8L16,29	l11.8-11.9c3-3,3-7.8,0-10.8C26.4,4.8,24.5,4,22.5,4z"></path></svg></span>Follow <span className="ml-2"></span></button>
+                    <a
+                    href={posts.author.social}
+                    target="_blank"
+                    rel='noreferrer'
+                    className="flex
+                    cursor-pointer
+                    justify-center max-h-max whitespace-nowrap focus:outline-none  focus:ring  focus:border-blue-300 rounded max-w-max text-gray-100 bg-headtwo  px-4 py-1 items-center hover:shadow-lg hover:text-black hover:bg-green-500"><span className="mr-2"><svg height="20" width="20" viewBox="0 0 32 32" className="fill-current text-red-700"><path d="M22.5,4c-2,0-3.9,0.8-5.3,2.2L16,7.4l-1.1-1.1C12,3.3,7.2,3.3,4.3,6.2c0,0-0.1,0.1-0.1,0.1c-3,3-3,7.8,0,10.8L16,29	l11.8-11.9c3-3,3-7.8,0-10.8C26.4,4.8,24.5,4,22.5,4z"></path></svg></span>Connect with {posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)} <span className="ml-2"></span></a>
 
                   </div>
                 </div>
