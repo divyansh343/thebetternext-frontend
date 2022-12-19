@@ -63,6 +63,9 @@ const Post = (props) => {
           height={500}
           width={900}
           loading='lazy'
+          style={{
+            paddingTop: "30px"
+          }}
           src={builder.image(value).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"}
         />
       ),
@@ -144,7 +147,7 @@ const Post = (props) => {
               <p href="#" className="text-sm pb-3 mt-2">
                 By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
               </p>
-              <p className='mt-10 text-[18px] leading-relaxed'>
+              <p className='mt-10 text-[18px] tracking-wide leading-loose'>
                 <PortableText components={ptComponents} value={posts.body} />
               </p>
               {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
@@ -177,7 +180,7 @@ const Post = (props) => {
                   <span className="text-md whitespace-nowrap text-gray-900 ">Author</span><span className="text-md whitespace-nowrap font-bold text-gray-900">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</span>
                   <div className=''>
 
-                    <p className="text-sm  text-gray-900 w-[250px] md:w-[300px] lg:w-[320px] ">
+                    <p className="text-sm text-gray-900 w-[250px] md:w-[300px] lg:w-[320px] ">
                       <PortableText components={ptComponents} value={posts.author.bio} />
                     </p>
                   </div>
@@ -205,13 +208,13 @@ const Post = (props) => {
           </div>
           {/* // for profile */}
 
-          <div className="w-full bg-white shadow flex flex-col my-4 p-6">
-            <p className="text-xl font-semibold pb-5">About US</p>
+          {/* <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+            <p className="text-xl font-semibold pb-5">{}</p>
             <p className="pb-2">We are independent magazine that works </p>
             <a href="#" className="w-full bg-gradient-to-br from-headtwo to-green-900 text-white text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
               Get to know us
             </a>
-          </div>
+          </div> */}
 
           <div className="w-full bg-white shadow flex flex-col my-4 p-6">
             <p className="text-xl font-semibold pb-5">Share</p>
