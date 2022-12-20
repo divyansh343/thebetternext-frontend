@@ -39,17 +39,17 @@ const Header = () => {
                         </a>
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link href="/category">
                         <a className="block md:px-4 transition text-lg hover:text-sky-700">
                           <span>Explore</span>
                         </a>
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
-                      <Link href="/category/culture">
+                      <Link href="/category/In%20Depth">
                         <a className="block md:px-4 transition text-lg hover:text-sky-700">
-                          <span>Culture</span>
+                          <span>In Depth</span>
                         </a>
                       </Link>
                     </li>
@@ -60,6 +60,29 @@ const Header = () => {
                         </a>
                       </Link>
                     </li>
+                    <li>
+                      <Link href="/category/innovation">
+                        <a className="block md:px-4 transition text-lg hover:text-sky-700">
+                          <span>Innovation</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/careers">
+                        <a className="block md:px-4 transition text-lg hover:text-sky-700">
+                          <span>Careers</span>
+                        </a>
+                      </Link>
+                    </li>
+                    {/* <li>
+                      <Link href="/careers">
+                        <div className='border-[1px] rounded-[4px] px-1 py-1 -mt-1 cursor-pointer bg-headtwo hover:bg-green-900'>
+                          <a className="block md:px-4 transition text-lg text-white">
+                            <span>Write for us</span>
+                          </a>
+                        </div>
+                      </Link>
+                    </li> */}
 
 
                   </ul>

@@ -12,15 +12,12 @@ const Flatnav = ({ catList }) => {
               <>
                 <Link key={catItem._id} href={`/category/${catItem.title}`} >
 
-                  <a className="mx-4 text-base font-thin leading-5 text-white transition-colors duration-300 transform dark:text-gray-200 hover:text-headcol dark:hover:text-blue-400 hover:underline md:my-0" href="#">{catItem.title.toUpperCase()}</a>
+                  <a className="mx-4 text-base leading-5 text-white transition-colors duration-300 transform dark:text-gray-200 hover:text-headcol dark:hover:text-blue-400 hover:underline md:my-0" href="#">{catItem.title.toUpperCase()}</a>
 
                 </Link>
               </>
             ))
           }
-
-
-            
           </div>
         </div>
       </nav>
