@@ -84,7 +84,7 @@ const Page = ({ data, catdata, catListData }) => {
 export async function getServerSideProps(context) {
   const { categoryid } = context.query
   const query = `
-  *[_type == "post" &&  '${categoryid}' in categories[]->title]{
+  *[_type == "post" &&  '${categoryid}' in categories[]->title]| order(_createdAt desc){
     author->{
       name,
       slug,

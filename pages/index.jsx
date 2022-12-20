@@ -28,7 +28,7 @@ export default function Home({ allPosts, heroData }) {
       
 
       {/* Card wrapper */}
-      <div className="mx-10 heading font-bold text-4xl m-5 my-10 text-primary">Latest Post&apos;s</div>
+      <div className="mx-10 heading font-bold text-4xl my-10 text-primary">Latest Post&apos;s</div>
       <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {
           allPosts.map((post) => (
@@ -47,7 +47,7 @@ export default function Home({ allPosts, heroData }) {
 export async function getServerSideProps() {
 
 
-  const query = `*[_type == "post"][0...12]{
+  const query = `*[_type == "post"][0...12]| order(_createdAt desc) {
     ...,
     categories[]->
   }`

@@ -9,13 +9,13 @@ const SectionCard = ({ heroData }) => {
             <div className="w-full bg-center bg-cover h-[32rem]"
                 style={{
                     backgroundImage: imgurl,
-                    height: '90vh',
+                    height: '80vh',
                     marginTop: '-70px',
                     fontSize: '50px',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                 }}>
-                <div className="flex items-center justify-center w-full h-full bg-gray-600 bg-opacity-30">
+                <div className="flex items-center justify-center mt-[60px] w-full h-full ">
                     <div className="text-center ">
 
                         <div className="text-3xl font-semibold text-yellow-500 uppercase lg:text-[45px] tracking-wide	 ">
