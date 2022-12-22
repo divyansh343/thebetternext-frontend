@@ -126,10 +126,10 @@ const Post = (props) => {
                 height={720}
                 width={1200}
                 alt={posts.title}
-                src={builder.image(posts.mainImage).url() || "https://images.unsplash.com/photo-1619866640467-86547b9858d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"} />
+                src={builder.image(posts.mainImage).url()} />
             }
 
-            <div className="bg-white flex flex-col justify-start p-6">
+            <div className="bg-white flex flex-col justify-start py-6 px-4 lg:px-6">
               <div className='flex'>
                 {
                   posts.categories.map(cat => (
@@ -147,7 +147,7 @@ const Post = (props) => {
               <p href="#" className="text-sm pb-3 mt-2">
                 By <a href="#" className="font-semibold hover:text-gray-800">{posts.author.name.charAt(0).toUpperCase() + posts.author.name.slice(1)}</a>, Published <span className='text-gray-800 font-semibold'>{new Date(posts.publishedAt).toDateString()}</span>
               </p>
-              <p className='mt-10 text-[18px] tracking-wide leading-loose'>
+              <p className='mt-10 text-[18px] text-headtwo tracking-wide leading-loose'>
                 <PortableText components={ptComponents} value={posts.body} />
               </p>
               {/* <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a> */}
