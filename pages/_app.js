@@ -3,6 +3,8 @@ import '../styles/globals.css'
 import Head from 'next/head'
 import { useEffect } from 'react';
 import Script from 'next/script'
+import NextNProgress from 'nextjs-progressbar';
+
 function MyApp({ Component, pageProps }) {
 
 //g anal
@@ -64,6 +66,9 @@ useEffect(() => {
         <meta name="description" content="theglu.in is an independent magazine we aim to deliver on developmenr jobs and sustainability." />
       </Head>
     <Layout>
+    <NextNProgress color="#29D" startPosition={0.3} stopDelayMs={500} height={1} 
+    options={{ easing: 'ease', speed: 500 }}
+    />
       <Component {...pageProps} />
     </Layout>
     </>
