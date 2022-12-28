@@ -47,7 +47,7 @@ const Header = () => {
                       </Link>
                     </li> */}
                     <li>
-                      <Link href="/category/In%20Depth">
+                      <Link href="/category/In-Depth">
                         <a className="block md:px-4 transition text-lg hover:text-sky-700">
                           <span>In Depth</span>
                         </a>
