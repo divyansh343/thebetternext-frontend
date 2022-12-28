@@ -16,9 +16,9 @@ const Cta = () => {
                     
                 </p>
                 <div className="inline-block shadow mt-5">
-                    <Link href="/category">
+                    {/* <Link href="/category"> */}
                     <a  className="inline-block py-3 px-4 bg-white hover:bg-indigo-100 text-indigo-500 font-medium border border-transparent rounded-md">Read free story&apos;s</a>
-                    </Link>
+                    {/* </Link> */}
                 </div>
             </div>
             <div className="lg:relative lg:mt-16">

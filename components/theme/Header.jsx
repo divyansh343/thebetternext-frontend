@@ -20,7 +20,7 @@ const Header = () => {
                       <rect x="14" y="1" width="7" height="6"></rect>
                       <rect x="14" y="11" width="7" height="12"></rect>
                     </svg>
-                    <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Glu</span>
+                    <span className="ml-2 text- font-bold tracking-wide text-gray-800 uppercase">Glu</span>
                   </a>
                 </Link>
 

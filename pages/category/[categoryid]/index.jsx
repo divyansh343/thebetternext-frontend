@@ -64,7 +64,7 @@ const Page = ({ data, catdata, catListData }) => {
 
       {/* extra shit */}
 
-      <div className="mx-10 heading text-4xl mt-10  text-headtwo">
+      <div className="ml-12 lg:ml-28 heading text-4xl mt-10  text-headtwo">
         {categoryid.charAt(0).toUpperCase() + categoryid.slice(1)} Posts
       </div>
       <div className="holder mx-auto mt-[30px] w-10/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

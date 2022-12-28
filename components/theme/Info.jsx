@@ -6,7 +6,7 @@ const Info = () => {
   return (
     <>
       <div className=" overflow-y-hidden">
-        <div className="mx-auto container py-12 px-4">
+        <div className="mx-auto container py-12 px-4 lg:px-[7px] ">
           <div className="w-full flex justify-center">
             <div className="w-full md:w-11/12 xl:w-10/12 rounded-lg bg-gradient-to-br from-headtwo to-green-900 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16">
               <div>
