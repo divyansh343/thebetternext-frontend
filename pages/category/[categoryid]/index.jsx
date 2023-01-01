@@ -10,7 +10,7 @@ import imageUrlBuilder from '@sanity/image-url'
 const builder = imageUrlBuilder(client)
 
 const Page = ({ data, catdata, catListData }) => {
-  console.log(catdata);
+  // console.log(catdata);
   const router = useRouter()
   const { categoryid } = router.query
   return (

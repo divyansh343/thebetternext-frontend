@@ -3,7 +3,7 @@ import React from 'react'
 const SectionCard = ({ heroData }) => {
     const hero = heroData[0]
     const imgurl = `url( "https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")`
-    console.log(hero);
+    // console.log(hero);
     return (
         <>
             <div className="w-full bg-center bg-cover h-[32rem]"
