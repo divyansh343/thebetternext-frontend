@@ -1,0 +1,32 @@
+{
+    "theme_color": "#eff1f3",
+    "background_color": "#eff1f3",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "name": "suprr.link",
+    "short_name": "suprr",
+    "description": "Stay up-to-date on the latest tech and lifestyle trends with TheGlu.in. Read informative articles and discover new ideas in the world of technology and lifestyle",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
