@@ -1,3 +1,4 @@
+const withPWA = require("next-pwa");
 /** @type {import('next').NextConfig} */
 
 module.exports = {
@@ -6,7 +7,6 @@ module.exports = {
     domains: ['images.unsplash.com','www.hyperui.dev','placeimg.com','cdn.sanity.io','source.unsplash.com', 'tuk-cdn.s3.amazonaws.com','i.ibb.co','img.freepik.com'],
   },
 }
-const withPWA = require("next-pwa");
 module.exports = withPWA({
 	pwa: {
 		dest: "public",
