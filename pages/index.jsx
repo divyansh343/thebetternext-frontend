@@ -3,12 +3,9 @@ import Image from 'next/image'
 import client from '../client'
 import Card from '../components/elements/Card'
 import Carousel from '../components/elements/Carousel'
-import Link from 'next/link'
 import fireImg from '../images/fire.png'
-
 import imageUrlBuilder from '@sanity/image-url'
-import LongCard from '../components/elements/LongCard'
-import SectionCard from '../components/elements/SectionCard'
+import HeroComponent from '../components/homepage/HeroComponent'
 const builder = imageUrlBuilder(client)
 
 function urlFor(source) {
@@ -23,7 +20,8 @@ export default function Home({ allPosts, heroData }) {
         <title>theglu.in</title>
         <meta name="description" content="theglu.in is an independent magazine we aim to deliver on developmenr jobs and sustainability." />
       </Head>
-      <SectionCard heroData={heroData} />
+      <HeroComponent />
+      {/* <SectionCard heroData={heroData} /> */}
       {/* <Hero /> */}
 
 

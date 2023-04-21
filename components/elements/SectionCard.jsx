@@ -1,12 +1,11 @@
 import React from 'react'
-import Hero from '../homepage/Hero'
+import Hero from '../homepage/HeroComponent'
 
 const SectionCard = ({ heroData }) => {
-    const hero = heroData[0]
-    const imgurl = `url( "https://images.unsplash.com/photo-1495055154266-57bbdeada43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")`
-    // console.log(hero);
     return (
-        <Hero />
+        <>
+            <Hero />
+        </>
         // <>
         //     <div className="w-full bg-center bg-cover h-[32rem]"
         //         style={{
@@ -22,10 +21,10 @@ const SectionCard = ({ heroData }) => {
         //                 <div className="text-3xl font-semibold text-yellow-500 uppercase lg:text-[45px] tracking-wide	 ">
         //                     <div className='bg-headtwo bg-opacity-80 shadow mx-2 px-4'>
         //                     <p className={` ${hero.txtcol ? "" : "text-white"} font-[sniglet] leading-tight drop-shadow tracking-wider text-opacity-90`}>We Aim to show a Better world </p>
-                                
+
         //                     </div>
         //                 </div>
-                      
+
         //             </div>
         //         </div>
         //     </div>
