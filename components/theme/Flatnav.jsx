@@ -3,16 +3,16 @@ import Link from 'next/link'
 const Flatnav = ({ catList }) => {
   return (
     <>
-      <nav x-data="{ isOpen: false }" className="relative bg-headtwo shadow dark:bg-gray-800">
+      <nav x-data="{ isOpen: false }" className="relative bg-col-mol shadow ">
         <div className="container px-6 py-1 mx-auto">
-          <div className="py-1 mt-3 mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
+          <div className=" mb-3 mt-5 lg:my-3  mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
 
           {
             catList.map(catItem => (
               <>
                 <Link key={catItem._id} href={`/category/${catItem.title}`} >
 
-                  <a className="mx-4 text-base leading-5 text-white transition-colors duration-300 transform dark:text-gray-200 hover:text-headcol dark:hover:text-blue-400 hover:underline md:my-0" href="#">{catItem.title.toUpperCase()}</a>
+                  <a className="mx-4 text-md leading-5 font-medium text-white transition-colors duration-300 transform dark:text-gray-200 hover:text-headcol tracking-wide dark:hover:text-blue-400 hover:underline md:my-0" href="#">{catItem.title}</a>
 
                 </Link>
               </>

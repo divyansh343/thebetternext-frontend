@@ -65,9 +65,9 @@ useEffect(() => {
         <title>theglu.in</title>
         <meta name="description" content="theglu.in is an independent magazine we aim to deliver on developmenr jobs and sustainability." />
       </Head>
-    <Layout>
-    <NextNProgress color="#29D" startPosition={0.3} stopDelayMs={500} height={1} 
-    options={{ easing: 'ease', speed: 500 }}
+    <Layout  >
+    <NextNProgress color="#29D" startPosition={0.3} stopDelayMs={500} height={2} 
+    options={{ easing: 'ease', speed: 500 , showSpinner: false }}
     />
       <Component {...pageProps} />
     </Layout>

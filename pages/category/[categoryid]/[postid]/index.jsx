@@ -298,7 +298,7 @@ const Post = (props) => {
                                       <div className="hover-img bg-white">
                                         <div className="py-3 px-6">
                                           <h3 className=" leading-tight mb-2 text-base">
-                                            <p className='underline hover:text-headtwo'>{
+                                            <p className=' hover:text-headtwo'>{
                                               truncate(listItem.title, 50)
                                             }</p>
                                           </h3>

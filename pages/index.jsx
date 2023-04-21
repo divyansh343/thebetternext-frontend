@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import client from '../client'
-import Hero from '../components/homepage/hero'
 import Card from '../components/elements/Card'
 import Carousel from '../components/elements/Carousel'
 import Link from 'next/link'
+import fireImg from '../images/fire.png'
 
 import imageUrlBuilder from '@sanity/image-url'
 import LongCard from '../components/elements/LongCard'
@@ -18,18 +18,19 @@ function urlFor(source) {
 export default function Home({ allPosts, heroData }) {
 
   return (
-    <>
+    <div data-theme="light" >
       <Head>
         <title>theglu.in</title>
         <meta name="description" content="theglu.in is an independent magazine we aim to deliver on developmenr jobs and sustainability." />
       </Head>
       <SectionCard heroData={heroData} />
       {/* <Hero /> */}
-      
+
 
       {/* Card wrapper */}
-      <div className="ml-12 lg:ml-28 heading font-bold text-4xl my-10 text-primary">Latest Post&apos;s</div>
-      <div className="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="ml-12 lg:ml-28 heading font-bold text-4xl my-10 text-primary"> <span className='inline-block'>
+        <Image src={fireImg} height={50} width={50} alt='' /> </span> Cricket Crunch</div>
+      <div className="holder mx-auto w-11/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {
           allPosts.map((post) => (
             <>
@@ -39,7 +40,7 @@ export default function Home({ allPosts, heroData }) {
         }
       </div>
       <Carousel />
-    </>
+    </div>
   )
 
 }

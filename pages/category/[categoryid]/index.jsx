@@ -19,7 +19,7 @@ const Page = ({ data, catdata, catListData }) => {
       <div className=''></div>
       {/* extra shit */}
       <article itemID="#" itemScope itemType="http://schema.org/BlogPosting">
-        <div className="bg-[#F4D8CD] grid items-center grid-cols-1 md:grid-cols-2">
+        <div className="bg-[#6fb1fc] grid items-center grid-cols-1 md:grid-cols-2">
           <div className=" md:order-1 md:h-full">
             {
               catdata.image ?
@@ -67,7 +67,7 @@ const Page = ({ data, catdata, catListData }) => {
       <div className="ml-12 lg:ml-28 heading text-4xl mt-10  text-headtwo">
         {categoryid.charAt(0).toUpperCase() + categoryid.slice(1)} Posts
       </div>
-      <div className="holder mx-auto mt-[30px] w-10/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="holder mx-auto mt-[30px] w-11/12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {
 
           data.map((post) => (

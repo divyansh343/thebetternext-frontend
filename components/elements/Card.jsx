@@ -14,7 +14,7 @@ function truncate(str, n) {
 const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   return (
     <>
-      <div className="each mb-5 m-2 shadow-lg rounded-b-md border-teal-300  border-[1px] rounded-t-md relative">
+      <div className="each mb-5 m-3 shadow-lg rounded-b-md border-teal-300 hover:bg-slate-50  border-[1px] rounded-t-md relative">
 
         {mainImage &&
           <Image
@@ -31,7 +31,7 @@ const Card = ({ mainImage, title, slug, cat, publishedAt }) => {
   } */}
         <div className="desc px-2 py-2 text-gray-800 ">
           <Link href={`/category/${cat}/${slug.current}`}>
-            <a className=" text-base lg:text-[17px] leading-normal tracking-wide text-headtwo block cursor-pointer px-1 hover:underline">{
+            <a className=" text-base lg:text-[17px] leading-normal tracking-wide text-headtwo block cursor-pointer px-1">{
               truncate(title, 97)
             }</a>
           </Link>

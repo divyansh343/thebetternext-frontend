@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
- 
 /* for Header */
 @layer components {
   .navbar-active .hamburger div:first-child {
@@ -11,14 +10,36 @@
   .navbar-active .hamburger div:last-child {
     @apply -rotate-45 -translate-y-1;
   }
-  .navbar-active div:first-child div:first-child div:last-child{
-    @apply block lg:flex
+  .navbar-active div:first-child div:first-child div:last-child {
+    @apply block lg:flex;
   }
 }
 /* for Header */
 
 /* for Footer */
 
+.bg-col-mol {
+  background: #0052d4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6fb1fc,
+    #4364f7,
+    #0052d4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6fb1fc,
+    #4364f7,
+    #0052d4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-hero {
+  background: #4e54c8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
 
 .bg-layers {
   -webkit-animation: filter-animation 4s infinite;
@@ -37,7 +58,7 @@
   50% {
     -webkit-filter: hue-rotate(45deg);
   }
-  
+
   100% {
     -webkit-filter: hue-rotate(0deg);
   }
@@ -57,25 +78,23 @@
 
 @keyframes filter-scale {
   0% {
-    transform:scale(1);
+    transform: scale(1);
   }
   50% {
-    transform:scale(1.4);
+    transform: scale(1.4);
   }
   100% {
-      transform:scale(.8);
+    transform: scale(0.8);
   }
 }
 /* for Footer */
-
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   /* font-family: 'SF Pro Display', sans-serif; */
-                                                
 }
 
 a {
@@ -96,7 +115,6 @@ a {
     background: whitesmoke;
   }
 } */
-
 
 .scroll-hidden::-webkit-scrollbar {
   height: 0px;

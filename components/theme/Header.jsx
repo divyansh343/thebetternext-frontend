@@ -14,13 +14,7 @@ const Header = () => {
 
                 <Link href="/">
                   <a aria-label="Company" title="Company" className="inline-flex items-center mr-8">
-                    <svg className="w-8 text-deep-purple-accent-400" viewBox="0 0 24 24" strokeLinejoin="round" strokeWidth="2" strokeLinecap="round" strokeMiterlimit="10" stroke="currentColor" fill="none">
-                      <rect x="3" y="1" width="7" height="12"></rect>
-                      <rect x="3" y="17" width="7" height="6"></rect>
-                      <rect x="14" y="1" width="7" height="6"></rect>
-                      <rect x="14" y="11" width="7" height="12"></rect>
-                    </svg>
-                    <span className="ml-2 text- font-bold tracking-wide text-gray-800 uppercase">Glu</span>
+                    <span className="ml-2 text-xl font-bold normal-case tracking-wide text-gray-800 ">#Cricket Connection</span>
                   </a>
                 </Link>
 
